@@ -1,4 +1,4 @@
-import { primitiveBorder } from "./primitives/border.js";
+import { primitiveBorder } from "../primitives/border.js";
 
 export const border = {
   borderRadiusCard: primitiveBorder.radius["300"],

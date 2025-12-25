@@ -1,9 +1,9 @@
-import { primitiveSize } from "./primitives/size.js";
+import { primitiveSize } from "../primitives/size.js";
 import {
   primitiveFontFamily,
   primitiveFontWeight,
   primitiveLetterSpacing,
-} from "./primitives/typography.js";
+} from "../primitives/typography.js";
 
 export const typography = {
   body: {
