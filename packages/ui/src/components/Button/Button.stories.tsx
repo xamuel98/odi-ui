@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "./Button.js";
 import { CaretDown, CaretUp } from "../../icons/index.js";
+import { useState } from "react";
 
 /**
  * Buttons are used to trigger actions or navigate to other pages.
@@ -199,6 +200,18 @@ export const WithIcons: Story = {
 };
 
 /**
+ * Buttons can include an icon only.
+ */
+export const IconOnly: Story = {
+  render: () => (
+    <div style={{ display: "flex", gap: 16 }}>
+      <Button icon={<CaretUp />} iconOnly />
+      <Button icon={<CaretDown />} iconOnly />
+    </div>
+  ),
+};
+
+/**
  * Buttons can display a loading state, which disables interaction.
  */
 export const Loading: Story = {
@@ -211,22 +224,78 @@ export const Loading: Story = {
 /**
  * Buttons can be disabled to prevent interaction.
  */
-export const Disabled: Story = {
-  args: {
-    children: "Disabled",
-    disabled: true,
-  },
+export const DisabledState = () => {
+  const variants = ["primary", "secondary", "tertiary", "plain"] as const;
+  const tones = ["default", "critical", "success"] as const;
+
+  return (
+    <div style={{ display: "grid", gap: 24, padding: 20 }}>
+      {variants.map((variant) => (
+        <div
+          key={variant}
+          style={{
+            display: "grid",
+            gridTemplateColumns: "100px repeat(3, 1fr)",
+            gap: 16,
+            alignItems: "center",
+          }}
+        >
+          <span style={{ fontFamily: "monospace", fontSize: 12 }}>
+            Disabled {variant}
+          </span>
+          {tones.map((tone) => (
+            // implicit default tone for first column
+            <Button
+              key={`${variant}-${tone}`}
+              variant={variant}
+              tone={tone === "default" ? undefined : tone}
+              disabled
+            >
+              {tone === "default" ? "Neutral" : tone}
+            </Button>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
 };
 
 /**
  * Buttons can include a disclosure chevron, typically used for menus or collapsible content.
  */
-export const Disclosure: Story = {
-  args: {
-    children: "More Options",
-    disclosure: true,
-    textAlign: "end",
-  },
+
+// A plain button with a disclosure chevron.
+export const PlainDisclosure = () => {
+  const [expanded, setExpanded] = useState<boolean>(false);
+
+  return (
+    <Button
+      variant="plain"
+      disclosure={expanded ? "up" : "down"}
+      onClick={() => {
+        setExpanded(!expanded);
+      }}
+    >
+      {expanded ? "Less options" : "More options"}
+    </Button>
+  );
+};
+
+// A plain button with a disclosure chevron aligned to the right.
+export const RightAlignedDisclosure = () => {
+  const [expanded, setExpanded] = useState<boolean>(false);
+
+  return (
+    <Button
+      disclosure={expanded ? "up" : "down"}
+      textAlign="end"
+      onClick={() => {
+        setExpanded(!expanded);
+      }}
+    >
+      {expanded ? "Less options" : "More options"}
+    </Button>
+  );
 };
 
 /**

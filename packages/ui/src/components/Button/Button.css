@@ -294,13 +294,18 @@
   box-shadow: none; /* Remove shadow on disabled */
 }
 
-.odi-button__chevron,
 .odi-button__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.odi-button__icon * {
+  fill: currentColor;
 }
 
 .odi-button--text-align-start {

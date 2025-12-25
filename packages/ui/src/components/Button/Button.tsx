@@ -1,16 +1,21 @@
 import * as React from "react";
 import { type VariantProps } from "class-variance-authority";
-import clsx from "clsx";
 import { Slot } from "@radix-ui/react-slot";
+import clsx from "clsx";
 import { buttonVariants } from "./Button.variants.js";
-import "./Button.css";
 import { CaretDown, CaretUp } from "../../icons/index.js";
+import "./Button.css";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
+  /* Whether the button should take the place of its child element */
   asChild?: boolean;
+
+  /* The icon to display inside the button */
   icon?: React.ReactNode;
+
+  /* The position of the icon inside the button */
   iconPosition?: "start" | "end";
 
   /* Changes the inner text alignment of the button */
@@ -61,8 +66,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             tone,
             size,
             textAlign,
-            disclosure,
-            iconPosition: icon ? iconPosition : undefined,
+            disclosure: disclosure ? true : undefined,
+            iconPosition: icon && !isIconOnly ? iconPosition : undefined,
             iconOnly: isIconOnly,
             loading,
             fullWidth,
@@ -91,7 +96,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             )}
 
             {disclosure && (
-              <span className="odi-button__chevron">
+              <span className="odi-button__icon">
                 {disclosure === "up" ? <CaretUp /> : <CaretDown />}
               </span>
             )}
