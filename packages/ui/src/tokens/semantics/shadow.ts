@@ -1,4 +1,4 @@
-import { primitiveShadow } from "./primitives/shadow.js";
+import { primitiveShadow } from "../primitives/shadow.js";
 
 const shadowColor = "rgba(0, 0, 0,";
 const lightBorderColor = "rgba(204, 204, 204,"; // Corresponds to gray["10"]

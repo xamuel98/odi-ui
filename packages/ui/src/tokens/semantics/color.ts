@@ -1,4 +1,4 @@
-import { primitiveColor } from "./primitives/color.js";
+import { primitiveColor } from "../primitives/color.js";
 
 export const color = {
   bg: {

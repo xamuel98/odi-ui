@@ -1,5 +1,2 @@
-export * from "./color.js";
-export * from "./space.js";
-export * from "./shadow.js";
-export * from "./border.js";
-export * from "./typography.js";
+export * from "./primitives/index.js";
+export * from "./semantics/index.js";

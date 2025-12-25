@@ -1,4 +1,4 @@
-import { primitiveSpace } from "./primitives/space.js";
+import { primitiveSpace } from "../primitives/space.js";
 
 export const space = {
   buttonGroupGap: primitiveSpace["200"],
