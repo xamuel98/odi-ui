@@ -1,8 +1,9 @@
 import { primitiveShadow } from "../primitives/shadow.js";
 
-const shadowColor = "rgba(0, 0, 0,";
-const lightBorderColor = "rgba(204, 204, 204,"; // Corresponds to gray["10"]
-const darkBorderColor = "rgba(26, 26, 26,"; // Corresponds to gray["16"]
+export const shadowColor = "rgba(0, 0, 0,";
+export const whiteColor = "rgba(255, 255, 255,";
+export const lightBorderColor = "rgba(204, 204, 204,"; // Corresponds to gray["10"]
+export const darkBorderColor = "rgba(26, 26, 26,"; // Corresponds to gray["16"]
 
 const shadowInset = `
   ${primitiveShadow.x[1]} ${primitiveShadow.y[0]} ${primitiveShadow.blur[0]} ${primitiveShadow.spread[0]} ${shadowColor} ${primitiveShadow.opacity[13]}) inset,
