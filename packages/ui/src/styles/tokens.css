@@ -1,0 +1,366 @@
+:root {
+  /* Color - Background */
+  --odi-color-bg-default: #d1d1d1; /* Mapped from primitiveColor.gray["6"] */
+  --odi-color-bg-inverse: #1a1a1a; /* Mapped from primitiveColor.gray["16"] */
+  --odi-color-bg-surface: #ffffff; /* Mapped from primitiveColor.gray["1"] */
+  --odi-color-bg-surface-hover: #f1f1f1; /* Mapped from primitiveColor.gray["4"] */
+  --odi-color-bg-surface-active: #e2e2e2; /* Mapped from primitiveColor.gray["5"] */
+  --odi-color-bg-surface-selected: #d1d1d1; /* Mapped from primitiveColor.gray["6"] */
+  --odi-color-bg-surface-secondary: #f1f1f1;
+  --odi-color-bg-surface-secondary-hover: #d1d1d1;
+  --odi-color-bg-surface-secondary-active: #c2c2c2;
+  --odi-color-bg-surface-secondary-selected: #c2c2c2;
+  --odi-color-bg-surface-disabled: rgba(0, 0, 0, 0.05);
+  --odi-color-bg-surface-tertiary: #e2e2e2;
+  --odi-color-bg-surface-tertiary-hover: #c2c2c2;
+  --odi-color-bg-surface-tertiary-active: #b1b1b1;
+  --odi-color-bg-surface-brand: #b1b1b1;
+  --odi-color-bg-surface-brand-hover: #c2c2c2;
+  --odi-color-bg-surface-brand-active: #d1d1d1;
+  --odi-color-bg-surface-brand-selected: #d1d1d1;
+  --odi-color-bg-surface-info: #e3f2fd;
+  --odi-color-bg-surface-info-hover: #bbdefb;
+  --odi-color-bg-surface-info-active: #90caf9;
+  --odi-color-bg-surface-success: #e8f5e9;
+  --odi-color-bg-surface-success-hover: #c8e6c9;
+  --odi-color-bg-surface-success-active: #a5d6a7;
+  --odi-color-bg-surface-caution: #fffde7;
+  --odi-color-bg-surface-caution-hover: #fff9c4;
+  --odi-color-bg-surface-caution-active: #fff59d;
+  --odi-color-bg-surface-warning: #fff3e0;
+  --odi-color-bg-surface-warning-hover: #ffe0b2;
+  --odi-color-bg-surface-warning-active: #ffccbc;
+  --odi-color-bg-surface-critical: #ffebee;
+  --odi-color-bg-surface-critical-hover: #ffcdd2;
+  --odi-color-bg-surface-critical-active: #ef9a9a;
+  --odi-color-bg-surface-emphasis: #e3f2fd;
+  --odi-color-bg-surface-emphasis-hover: #bbdefb;
+  --odi-color-bg-surface-emphasis-active: #90caf9;
+  --odi-color-bg-surface-magic: #f3e5f5;
+  --odi-color-bg-surface-magic-hover: #e1bee7;
+  --odi-color-bg-surface-magic-active: #ce93d8;
+  --odi-color-bg-surface-inverse: #303030;
+  --odi-color-bg-surface-transparent: rgba(0, 0, 0, 0.01);
+  --odi-color-bg-fill: #ffffff;
+  --odi-color-bg-fill-hover: #fdfdfd;
+  --odi-color-bg-fill-active: #f1f1f1;
+  --odi-color-bg-fill-selected: #b1b1b1;
+  --odi-color-bg-fill-disabled: rgba(0, 0, 0, 0.05);
+  --odi-color-bg-fill-secondary: #d1d1d1;
+  --odi-color-bg-fill-secondary-hover: #c2c2c2;
+  --odi-color-bg-fill-secondary-active: #b1b1b1;
+  --odi-color-bg-fill-tertiary: #b1b1b1;
+  --odi-color-bg-fill-tertiary-hover: #a1a1a1;
+  --odi-color-bg-fill-tertiary-active: #919191;
+  --odi-color-bg-fill-brand: #303030;
+  --odi-color-bg-fill-brand-hover: #1a1a1a;
+  --odi-color-bg-fill-brand-active: #1a1a1a;
+  --odi-color-bg-fill-brand-selected: #303030;
+  --odi-color-bg-fill-brand-disabled: rgba(0, 0, 0, 0.4);
+  --odi-color-bg-fill-info: #42a5f5;
+  --odi-color-bg-fill-info-hover: #2196f3;
+  --odi-color-bg-fill-info-active: #1e88e5;
+  --odi-color-bg-fill-info-secondary: #bbdefb;
+  --odi-color-bg-fill-success: #43a047;
+  --odi-color-bg-fill-success-hover: #388e3c;
+  --odi-color-bg-fill-success-active: #2e7d32;
+  --odi-color-bg-fill-success-secondary: #e8f5e9;
+  --odi-color-bg-fill-caution: #fbc02d;
+  --odi-color-bg-fill-caution-hover: #f9a825;
+  --odi-color-bg-fill-caution-active: #f57f17;
+  --odi-color-bg-fill-caution-secondary: #fff59d;
+  --odi-color-bg-fill-warning: #fb8c00;
+  --odi-color-bg-fill-warning-hover: #f57c00;
+  --odi-color-bg-fill-warning-active: #ef6c00;
+  --odi-color-bg-fill-warning-secondary: #ffb74d;
+  --odi-color-bg-fill-critical: #e53935;
+  --odi-color-bg-fill-critical-hover: #d32f2f;
+  --odi-color-bg-fill-critical-active: #c62828;
+  --odi-color-bg-fill-critical-selected: #c62828;
+  --odi-color-bg-fill-critical-secondary: #f44336;
+  --odi-color-bg-fill-emphasis: #1e88e5;
+  --odi-color-bg-fill-emphasis-hover: #1976d2;
+  --odi-color-bg-fill-emphasis-active: #1565c0;
+  --odi-color-bg-fill-magic: #8e24aa;
+  --odi-color-bg-fill-magic-secondary: #ba68c8;
+  --odi-color-bg-fill-magic-secondary-hover: #ab47bc;
+  --odi-color-bg-fill-magic-secondary-active: #9c27b0;
+  --odi-color-bg-fill-inverse: #303030;
+  --odi-color-bg-fill-inverse-hover: #424242;
+  --odi-color-bg-fill-inverse-active: #616161;
+  --odi-color-bg-fill-transparent: rgba(0, 0, 0, 0.03);
+  --odi-color-bg-fill-transparent-hover: rgba(0, 0, 0, 0.05);
+  --odi-color-bg-fill-transparent-active: rgba(0, 0, 0, 0.07);
+  --odi-color-bg-fill-transparent-secondary: rgba(0, 0, 0, 0.06);
+  --odi-color-bg-fill-transparent-secondary-hover: rgba(0, 0, 0, 0.07);
+  --odi-color-bg-fill-transparent-secondary-active: rgba(0, 0, 0, 0.08);
+  --odi-color-bg-fill-transparent-selected: rgba(0, 0, 0, 0.07);
+
+  /* Color - Text */
+  --odi-color-text-default: #303030;
+  --odi-color-text-secondary: #616161;
+  --odi-color-text-disabled: #9e9e9e;
+  --odi-color-text-link: #1e88e5;
+  --odi-color-text-link-hover: #1976d2;
+  --odi-color-text-link-active: #1565c0;
+  --odi-color-text-link-inverse: #90caf9;
+  --odi-color-text-brand: #424242;
+  --odi-color-text-brand-hover: #303030;
+  --odi-color-text-brand-on-bg-fill: #ffffff;
+  --odi-color-text-brand-on-bg-fill-hover: #b1b1b1;
+  --odi-color-text-brand-on-bg-fill-active: #919191;
+  --odi-color-text-brand-on-bg-fill-disabled: #ffffff;
+  --odi-color-text-info: #1565c0;
+  --odi-color-text-info-hover: #0d47a1;
+  --odi-color-text-info-active: #0a3070;
+  --odi-color-text-info-on-bg-fill: #0a3070;
+  --odi-color-text-success: #2e7d32;
+  --odi-color-text-success-hover: #1b5e20;
+  --odi-color-text-success-active: #133a16;
+  --odi-color-text-success-on-bg-fill: #ffffff;
+  --odi-color-text-caution: #f57f17;
+  --odi-color-text-caution-hover: #e65100;
+  --odi-color-text-caution-active: #bf360c;
+  --odi-color-text-caution-on-bg-fill: #f9a825;
+  --odi-color-text-warning: #e65100;
+  --odi-color-text-warning-hover: #ef6c00;
+  --odi-color-text-warning-active: #bf360c;
+  --odi-color-text-warning-on-bg-fill: #bf360c;
+  --odi-color-text-critical: #c62828;
+  --odi-color-text-critical-hover: #b71c1c;
+  --odi-color-text-critical-active: #880e4f;
+  --odi-color-text-critical-on-bg-fill: #ffffff;
+  --odi-color-text-emphasis: #1e88e5;
+  --odi-color-text-emphasis-hover: #1976d2;
+  --odi-color-text-emphasis-active: #1565c0;
+  --odi-color-text-emphasis-on-bg-fill: #ffffff;
+  --odi-color-text-emphasis-on-bg-fill-hover: #f1f1f1;
+  --odi-color-text-emphasis-on-bg-fill-active: #d1d1d1;
+  --odi-color-text-magic: #8e24aa;
+  --odi-color-text-magic-secondary: #ba68c8;
+  --odi-color-text-magic-on-bg-fill: #ffffff;
+  --odi-color-text-inverse: #b1b1b1;
+  --odi-color-text-inverse-secondary: #919191;
+
+  /* Color - Icon */
+  --odi-color-icon-default: #424242;
+  --odi-color-icon-hover: #303030;
+  --odi-color-icon-active: #1a1a1a;
+  --odi-color-icon-disabled: #b1b1b1;
+  --odi-color-icon-secondary: #919191;
+  --odi-color-icon-secondary-hover: #757575;
+  --odi-color-icon-secondary-active: #424242;
+  --odi-color-icon-brand: #1a1a1a;
+  --odi-color-icon-info: #64b5f6;
+  --odi-color-icon-success: #4caf50;
+  --odi-color-icon-caution: #fff176;
+  --odi-color-icon-warning: #ffb74d;
+  --odi-color-icon-critical: #e57373;
+  --odi-color-icon-emphasis: #1e88e5;
+  --odi-color-icon-emphasis-hover: #1976d2;
+  --odi-color-icon-emphasis-active: #1565c0;
+  --odi-color-icon-magic: #ce93d8;
+  --odi-color-icon-inverse: #b1b1b1;
+  --odi-color-icon-inverse-secondary: #919191;
+
+  /* Color - Border */
+  --odi-color-border-default: #b1b1b1;
+  --odi-color-border-hover: #919191;
+  --odi-color-border-disabled: #c2c2c2;
+  --odi-color-border-secondary: #c2c2c2;
+  --odi-color-border-tertiary: #919191;
+  --odi-color-border-focus: #1e88e5;
+  --odi-color-border-brand: #b1b1b1;
+  --odi-color-border-info: #90caf9;
+  --odi-color-border-success: #a5d6a7;
+  --odi-color-border-caution: #fff59d;
+  --odi-color-border-warning: #ffb74d;
+  --odi-color-border-critical: #ef9a9a;
+  --odi-color-border-critical-secondary: #c62828;
+  --odi-color-border-emphasis: #1e88e5;
+  --odi-color-border-emphasis-hover: #1976d2;
+  --odi-color-border-emphasis-active: #1565c0;
+  --odi-color-border-magic: #e1bee7;
+  --odi-color-border-magic-secondary: #ab47bc;
+  --odi-color-border-magic-secondary-hover: #9c27b0;
+  --odi-color-border-inverse: #616161;
+  --odi-color-border-inverse-active: #b1b1b1;
+  --odi-color-border-inverse-hover: #919191;
+
+  /* Color - Specialty */
+  --odi-color-specialty-backdrop-bg: rgba(0, 0, 0, 0.14);
+  --odi-color-specialty-input-bg-surface: #fdfdfd;
+  --odi-color-specialty-input-bg-surface-hover: #f1f1f1;
+  --odi-color-specialty-input-bg-surface-active: #e2e2e2;
+  --odi-color-specialty-input-border: #919191;
+  --odi-color-specialty-input-border-hover: #757575;
+  --odi-color-specialty-input-border-active: #1a1a1a;
+  --odi-color-specialty-checkbox-icon-disabled: #ffffff;
+  --odi-color-specialty-checkbox-bg-surface-disabled: rgba(0, 0, 0, 0.07);
+  --odi-color-specialty-radio-button-icon-disabled: #ffffff;
+  --odi-color-specialty-radio-button-bg-surface-disabled: rgba(0, 0, 0, 0.07);
+  --odi-color-specialty-nav-bg: #c2c2c2;
+  --odi-color-specialty-nav-bg-surface: rgba(0, 0, 0, 0.03);
+  --odi-color-specialty-nav-bg-surface-hover: #d1d1d1;
+  --odi-color-specialty-nav-bg-surface-active: #f1f1f1;
+  --odi-color-specialty-nav-bg-surface-selected: #f1f1f1;
+  --odi-color-specialty-video-thumbnail-play-button-text-on-bg-fill: #ffffff;
+  --odi-color-specialty-video-thumbnail-play-button-bg-fill: rgba(
+    0,
+    0,
+    0,
+    0.14
+  );
+  --odi-color-specialty-video-thumbnail-play-button-bg-fill-hover: rgba(
+    0,
+    0,
+    0,
+    0.15
+  );
+  --odi-color-specialty-avatar-bg-fill: #919191;
+  --odi-color-specialty-avatar-one-bg-fill: #d81b60;
+  --odi-color-specialty-avatar-two-bg-fill: #388e3c;
+  --odi-color-specialty-avatar-three-bg-fill: #00acc1;
+  --odi-color-specialty-avatar-four-bg-fill: #1976d2;
+  --odi-color-specialty-avatar-five-bg-fill: #e91e63;
+  --odi-color-specialty-avatar-text-on-bg-fill: #ffffff;
+  --odi-color-specialty-avatar-one-text-on-bg-fill: #880e4f;
+  --odi-color-specialty-avatar-two-text-on-bg-fill: #1b5e20;
+  --odi-color-specialty-avatar-three-text-on-bg-fill: #006064;
+  --odi-color-specialty-avatar-four-text-on-bg-fill: #0d47a1;
+  --odi-color-specialty-avatar-five-text-on-bg-fill: #880e4f;
+
+  /* Space */
+  --odi-space-button-group-gap: 8px;
+  --odi-space-card-gap: 16px;
+  --odi-space-card-padding: 16px;
+  --odi-space-table-cell-padding: 6px;
+
+  /* Border */
+  --odi-border-radius-card: 12px;
+  --odi-border-radius-button: 8px;
+  --odi-border-radius-popover: 12px;
+
+  /* Shadow */
+  --odi-shadow-inset-100: 0px 1px 1px 0px rgba(26, 26, 26, 0.15) inset,
+    0px 1px 2px 0px rgba(26, 26, 26, 0.15) inset;
+  --odi-shadow-inset-200: -1px 0px 1px 0px rgba(26, 26, 26, 0.12) inset,
+    1px 0px 1px 0px rgba(26, 26, 26, 0.12) inset,
+    0px 2px 1px 0px rgba(26, 26, 26, 0.2) inset;
+  --odi-shadow-elevation-0: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  --odi-shadow-elevation-100: 1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    -1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    0px -1px 0px 0px rgba(0, 0, 0, 0.17) inset,
+    0px 1px 0px 0px rgba(204, 204, 204, 0.5) inset,
+    0px 1px 0px 0px rgba(26, 26, 26, 0.07);
+  --odi-shadow-elevation-200: 1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    -1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    0px -1px 0px 0px rgba(0, 0, 0, 0.17) inset,
+    0px 1px 0px 0px rgba(204, 204, 204, 0.5) inset,
+    0px 3px 1px -1px rgba(26, 26, 26, 0.07);
+  --odi-shadow-elevation-300: 1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    -1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    0px -1px 0px 0px rgba(0, 0, 0, 0.17) inset,
+    0px 1px 0px 0px rgba(204, 204, 204, 0.5) inset,
+    0px 4px 6px -2px rgba(26, 26, 26, 0.2);
+  --odi-shadow-elevation-400: 1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    -1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    0px -1px 0px 0px rgba(0, 0, 0, 0.17) inset,
+    0px 1px 0px 0px rgba(204, 204, 204, 0.5) inset,
+    0px 8px 16px -4px rgba(26, 26, 26, 0.22);
+  --odi-shadow-elevation-500: 1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    -1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    0px -1px 0px 0px rgba(0, 0, 0, 0.17) inset,
+    0px 1px 0px 0px rgba(204, 204, 204, 0.5) inset,
+    0px 12px 20px -8px rgba(26, 26, 26, 0.24);
+  --odi-shadow-elevation-600: 1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    -1px 0px 0px 0px rgba(0, 0, 0, 0.13) inset,
+    0px -1px 0px 0px rgba(0, 0, 0, 0.17) inset,
+    0px 1px 0px 0px rgba(204, 204, 204, 0.5) inset,
+    0px 20px 20px -8px rgba(26, 26, 26, 0.28);
+  --odi-shadow-bevel-100: 1px 0px 0px 0px rgba(26, 26, 26, 0.13) inset,
+    -1px 0px 0px 0px rgba(26, 26, 26, 0.13) inset,
+    0px -1px 0px 0px rgba(26, 26, 26, 0.17) inset,
+    0px 1px 0px 0px rgba(204, 204, 204, 0.5) inset;
+  --odi-shadow-border-inset: 0px 0px 0px 1px rgba(0, 0, 0, 0.08);
+
+  /* Typography - Body XS */
+  --odi-typography-body-xs-font-size: 11px;
+  --odi-typography-body-xs-line-height: 12px;
+  --odi-typography-body-xs-font-weight: 450;
+  --odi-typography-body-xs-letter-spacing: 0px;
+  --odi-typography-body-xs-font-family: "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  /* Typography - Body SM */
+  --odi-typography-body-sm-font-size: 12px;
+  --odi-typography-body-sm-line-height: 16px;
+  --odi-typography-body-sm-font-weight: 450;
+  --odi-typography-body-sm-letter-spacing: 0px;
+  --odi-typography-body-sm-font-family: "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  /* Typography - Body MD */
+  --odi-typography-body-md-font-size: 13px;
+  --odi-typography-body-md-line-height: 20px;
+  --odi-typography-body-md-font-weight: 450;
+  --odi-typography-body-md-letter-spacing: -0.2px;
+  --odi-typography-body-md-font-family: "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  /* Typography - Body LG */
+  --odi-typography-body-lg-font-size: 14px;
+  --odi-typography-body-lg-line-height: 20px;
+  --odi-typography-body-lg-font-weight: 450;
+  --odi-typography-body-lg-letter-spacing: 0px;
+  --odi-typography-body-lg-font-family: "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  /* Typography - Heading SM */
+  --odi-typography-heading-sm-font-size: 13px;
+  --odi-typography-heading-sm-line-height: 20px;
+  --odi-typography-heading-sm-font-weight: 650;
+  --odi-typography-heading-sm-letter-spacing: 0px;
+  --odi-typography-heading-sm-font-family: "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  /* Typography - Heading MD */
+  --odi-typography-heading-md-font-size: 14px;
+  --odi-typography-heading-md-line-height: 20px;
+  --odi-typography-heading-md-font-weight: 650;
+  --odi-typography-heading-md-letter-spacing: 0px;
+  --odi-typography-heading-md-font-family: "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  /* Typography - Heading LG */
+  --odi-typography-heading-lg-font-size: 20px;
+  --odi-typography-heading-lg-line-height: 24px;
+  --odi-typography-heading-lg-font-weight: 650;
+  --odi-typography-heading-lg-letter-spacing: -0.2px;
+  --odi-typography-heading-lg-font-family: "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  /* Typography - Heading XL */
+  --odi-typography-heading-xl-font-size: 24px;
+  --odi-typography-heading-xl-line-height: 32px;
+  --odi-typography-heading-xl-font-weight: 700;
+  --odi-typography-heading-xl-letter-spacing: -0.2px;
+  --odi-typography-heading-xl-font-family: "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  /* Typography - Heading 2XL */
+  --odi-typography-heading-2xl-font-size: 30px;
+  --odi-typography-heading-2xl-line-height: 40px;
+  --odi-typography-heading-2xl-font-weight: 700;
+  --odi-typography-heading-2xl-letter-spacing: -0.3px;
+  --odi-typography-heading-2xl-font-family: "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  /* Typography - Heading 3XL */
+  --odi-typography-heading-3xl-font-size: 36px;
+  --odi-typography-heading-3xl-line-height: 48px;
+  --odi-typography-heading-3xl-font-weight: 700;
+  --odi-typography-heading-3xl-letter-spacing: -0.54px;
+  --odi-typography-heading-3xl-font-family: "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+}
