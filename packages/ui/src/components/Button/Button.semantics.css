@@ -1,0 +1,65 @@
+:root {
+  /* Button Shadows - Default Variant */
+  --odi-button-shadow-default: 0px -1px 0px 0px #b5b5b5 inset,
+    -1px 0px 0px 0px #e3e3e3 inset, 1px 0px 0px 0px #e3e3e3 inset,
+    0px 1px 0px 0px #e3e3e3 inset;
+
+  --odi-button-shadow-hover: 0px -1px 0px 0px #ccc inset,
+    1px 0px 0px 0px #ebebeb inset, -1px 0px 1px 0px #ebebeb inset,
+    0px 1px 0px 0px #ebebeb inset;
+
+  --odi-button-shadow-inset: -1px 0px 1px 0px rgba(26, 26, 26, 0.12) inset,
+    1px 0px 1px 0px rgba(26, 26, 26, 0.12) inset,
+    0px 2px 1px 0px rgba(26, 26, 26, 0.2) inset;
+
+  /* Button Shadows - Primary Variant */
+  --odi-button-shadow-primary-default: 0px 2px 0px 0px rgba(255, 255, 255, 0.2)
+      inset,
+    2px 0px 0px 0px rgba(255, 255, 255, 0.2) inset,
+    -2px 0px 0px 0px rgba(255, 255, 255, 0.2) inset, 0px -1px 0px 1px #000 inset,
+    0px 1px 0px 0px #000 inset;
+
+  --odi-button-shadow-primary-hover: 0px 1px 0px 0px rgba(255, 255, 255, 0.24)
+      inset,
+    1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset,
+    -1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset, 0px -1px 0px 0px #000 inset,
+    0px -1px 0px 1px #000 inset;
+
+  --odi-button-shadow-primary-inset: 0px 3px 0px 0px #000 inset;
+
+  /* Button Shadows - Success Tone (Primary) */
+  --odi-button-shadow-success-default: 0px -1.5px 0px 0px rgba(0, 0, 0, 0.25) inset,
+    1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset,
+    -1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset,
+    0px 1px 0px 0px rgba(255, 255, 255, 0.48) inset;
+
+  --odi-button-shadow-success-hover: 0px -1.5px 0px 0px rgba(0, 0, 0, 0.25) inset,
+    -1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset,
+    1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset,
+    0px 1px 0px 0px rgba(255, 255, 255, 0.48) inset;
+
+  --odi-button-shadow-success-inset: -1px 0px 1px 0px rgba(0, 0, 0, 0.2) inset,
+    1px 0px 1px 0px rgba(0, 0, 0, 0.2) inset,
+    0px 2px 0px 0px rgba(0, 0, 0, 0.6) inset;
+
+  /* Button Shadows - Critical Tone (Primary) */
+  --odi-button-shadow-critical-default: 0px -1.5px 0px 0px rgba(0, 0, 0, 0.25) inset,
+    1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset,
+    -1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset,
+    0px 1px 0px 0px rgba(255, 255, 255, 0.48) inset;
+
+  --odi-button-shadow-critical-hover: 0px -1.5px 0px 0px rgba(0, 0, 0, 0.25) inset,
+    -1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset,
+    1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset,
+    0px 1px 0px 0px rgba(255, 255, 255, 0.48) inset;
+
+  --odi-button-shadow-critical-inset: -1px 0px 1px 0px rgba(0, 0, 0, 0.2) inset,
+    1px 0px 1px 0px rgba(0, 0, 0, 0.2) inset,
+    0px 2px 0px 0px rgba(0, 0, 0, 0.6) inset;
+
+  --odi-button-bg-gradient: linear-gradient(
+    180deg,
+    rgba(48, 48, 48, 0) 63.53%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+}

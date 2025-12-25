@@ -1,0 +1,362 @@
+@import "./Button.semantics.css";
+
+.odi-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--odi-space-050);
+
+  font-family: var(--odi-font-family-sans);
+  font-weight: var(--odi-font-weight-medium);
+
+  border-radius: var(--odi-border-radius-button);
+  border: var(--odi-border-width-025) solid transparent;
+
+  /* Padding Logic using CSS Variables */
+  --button-pt: var(--odi-space-150);
+  --button-pb: var(--odi-space-150);
+  --button-padding-side: var(--odi-space-300);
+
+  /* Derived values */
+  --button-pl: var(--button-padding-side);
+  --button-pr: var(--button-padding-side);
+
+  padding: var(--button-pt) var(--button-pr) var(--button-pb) var(--button-pl);
+
+  background: var(--button-bg);
+  color: var(--button-text);
+
+  box-shadow: var(--button-shadow);
+
+  isolation: isolate;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+
+  transition: background-color 0.1s ease, box-shadow 0.1s ease,
+    transform 0.1s ease;
+}
+
+/* Size */
+.odi-button--size-micro {
+  height: var(--odi-space-600);
+  font-size: var(--odi-typography-body-sm-font-size);
+
+  --button-pt: var(--odi-space-100);
+  --button-pb: var(--odi-space-100);
+  --button-padding-side: var(--odi-space-200);
+}
+
+.odi-button--size-medium {
+  height: var(--odi-space-700);
+  font-size: var(--odi-typography-body-sm-font-size);
+  /* Default variables apply */
+}
+
+.odi-button--size-large {
+  height: var(--odi-space-800);
+  font-size: var(--odi-typography-body-md-font-size);
+  /* Default variables apply (150/300) */
+}
+
+.odi-button--icon-only {
+  /* Icon only overrides explicit padding sides */
+  --button-padding-side: var(--odi-space-100);
+  width: var(--odi-space-700);
+}
+
+.odi-button--full-width {
+  width: 100%;
+}
+
+/* --- Variants & Tones --- */
+/* Primary + Default Tone (Implicit) */
+.odi-button--variant-primary {
+  --button-bg: var(--odi-button-bg-gradient), var(--odi-color-bg-fill-brand);
+  --button-text: var(--odi-color-text-brand-on-bg-fill);
+
+  --button-shadow: var(--odi-button-shadow-primary-default);
+  --button-shadow-hover: var(--odi-button-shadow-primary-hover);
+  --button-shadow-active: var(--odi-button-shadow-primary-inset);
+
+  /* States */
+  --button-bg-hover: var(--odi-button-bg-gradient),
+    var(--odi-color-bg-fill-brand-hover);
+  --button-bg-active: var(--odi-color-bg-fill-brand-active);
+  --button-bg-disabled: var(--odi-color-bg-fill-brand-disabled);
+  --button-text-disabled: var(--odi-color-text-brand-on-bg-fill-disabled);
+}
+
+/* Primary + Critical Tone */
+.odi-button--tone-critical.odi-button--variant-primary {
+  --button-bg: var(--odi-button-bg-gradient), var(--odi-color-bg-fill-critical);
+  --button-text: var(--odi-color-text-critical-on-bg-fill);
+
+  --button-shadow: var(--odi-button-shadow-critical-default);
+  --button-shadow-hover: var(--odi-button-shadow-critical-hover);
+  --button-shadow-active: var(--odi-button-shadow-critical-inset);
+
+  /* States */
+  --button-bg-hover: var(--odi-button-bg-gradient),
+    var(--odi-color-bg-fill-critical-hover);
+  --button-bg-active: var(--odi-color-bg-fill-critical-active);
+  --button-bg-disabled: var(--odi-color-bg-fill-disabled);
+  --button-text-disabled: var(--odi-color-text-disabled);
+}
+
+/* Primary + Success Tone */
+.odi-button--tone-success.odi-button--variant-primary {
+  --button-bg: var(--odi-button-bg-gradient), var(--odi-color-bg-fill-success);
+  --button-text: var(--odi-color-text-success-on-bg-fill);
+
+  --button-shadow: var(--odi-button-shadow-success-default);
+  --button-shadow-hover: var(--odi-button-shadow-success-hover);
+  --button-shadow-active: var(--odi-button-shadow-success-inset);
+
+  /* States */
+  --button-bg-hover: var(--odi-button-bg-gradient),
+    var(--odi-color-bg-fill-success-hover);
+  --button-bg-active: var(--odi-color-bg-fill-success-active);
+  --button-bg-disabled: var(--odi-color-bg-fill-disabled);
+  --button-text-disabled: var(--odi-color-text-disabled);
+}
+
+/* --- Secondary Variant (Default) --- */
+/* Secondary + Default Tone (Implicit) */
+.odi-button--variant-secondary {
+  --button-bg: var(--odi-color-bg-fill);
+  --button-text: var(--odi-color-text-default);
+  --button-border: var(--odi-color-border-default);
+
+  --button-shadow: var(--odi-button-shadow-default);
+  --button-shadow-hover: var(--odi-button-shadow-hover);
+  --button-shadow-active: var(--odi-button-shadow-inset);
+
+  /* States */
+  --button-bg-hover: var(--odi-color-bg-fill-hover);
+  --button-bg-active: var(--odi-color-bg-fill-active);
+  --button-bg-disabled: var(--odi-color-bg-fill-disabled);
+  --button-text-disabled: var(--odi-color-text-disabled);
+  --button-border-disabled: var(--odi-color-border-disabled);
+}
+
+/* Secondary + Critical Tone */
+.odi-button--tone-critical.odi-button--variant-secondary {
+  --button-bg: var(--odi-color-bg-fill);
+  --button-text: var(--odi-color-text-critical);
+  --button-border: var(--odi-color-border-critical);
+
+  --button-shadow: var(--odi-button-shadow-default);
+  --button-shadow-hover: var(--odi-button-shadow-hover);
+  --button-shadow-active: var(--odi-button-shadow-inset);
+
+  /* States */
+  --button-bg-hover: var(--odi-color-bg-fill-critical-secondary);
+  --button-bg-active: var(
+    --odi-color-bg-fill-critical-secondary
+  ); /* or slightly darker/custom if available */
+  --button-bg-disabled: var(--odi-color-bg-fill-disabled);
+  --button-text-disabled: var(--odi-color-text-disabled);
+  --button-border-disabled: var(--odi-color-border-disabled);
+}
+
+/* Secondary + Success Tone */
+.odi-button--tone-success.odi-button--variant-secondary {
+  --button-bg: var(--odi-color-bg-fill);
+  --button-text: var(--odi-color-text-success);
+  --button-border: var(--odi-color-border-success);
+
+  --button-shadow: var(--odi-button-shadow-default);
+  --button-shadow-hover: var(--odi-button-shadow-hover);
+  --button-shadow-active: var(--odi-button-shadow-inset);
+
+  /* States */
+  --button-bg-hover: var(--odi-color-bg-fill-success-secondary);
+  --button-bg-active: var(--odi-color-bg-fill-success-secondary);
+  --button-bg-disabled: var(--odi-color-bg-fill-disabled);
+  --button-text-disabled: var(--odi-color-text-disabled);
+  --button-border-disabled: var(--odi-color-border-disabled);
+}
+
+/* --- Tertiary Variant --- */
+/* Tertiary + Default Tone (Implicit) */
+.odi-button--variant-tertiary {
+  background: transparent;
+  color: var(--odi-color-text-default);
+
+  --button-bg-hover: var(--odi-color-bg-fill-transparent-hover);
+  --button-bg-active: var(--odi-color-bg-fill-transparent-active);
+  --button-bg-disabled: transparent;
+  --button-text-disabled: var(--odi-color-text-disabled);
+}
+
+/* Tertiary + Critical Tone */
+.odi-button--tone-critical.odi-button--variant-tertiary {
+  color: var(--odi-color-text-critical);
+
+  --button-bg-hover: var(--odi-color-bg-fill-critical-secondary);
+  --button-bg-active: var(--odi-color-bg-fill-critical-secondary);
+}
+
+.odi-button--tone-critical.odi-button--variant-tertiary:hover:not(:disabled) {
+  color: var(--odi-color-text-critical-hover);
+}
+
+.odi-button--tone-critical.odi-button--variant-tertiary:active:not(:disabled) {
+  color: var(--odi-color-text-critical-active);
+}
+
+/* Tertiary + Success Tone */
+.odi-button--tone-success.odi-button--variant-tertiary {
+  color: var(--odi-color-text-success);
+
+  --button-bg-hover: var(--odi-color-bg-fill-success-secondary);
+  --button-bg-active: var(--odi-color-bg-fill-success-secondary);
+}
+
+.odi-button--tone-success.odi-button--variant-tertiary:hover:not(:disabled) {
+  color: var(--odi-color-text-success-hover);
+}
+
+.odi-button--tone-success.odi-button--variant-tertiary:active:not(:disabled) {
+  color: var(--odi-color-text-success-active);
+}
+
+/* --- Plain Variant --- */
+/* Plain + Default Tone (Implicit) */
+.odi-button--variant-plain {
+  background: transparent;
+  color: var(--odi-color-text-emphasis);
+  padding-inline: 0;
+
+  --button-bg-hover: transparent;
+  --button-bg-active: transparent;
+  --button-bg-disabled: transparent;
+  --button-text-disabled: var(--odi-color-text-disabled);
+}
+
+/* Plain + Critical Tone */
+.odi-button--tone-critical.odi-button--variant-plain {
+  color: var(--odi-color-text-critical);
+}
+
+.odi-button--tone-critical.odi-button--variant-plain:hover:not(:disabled) {
+  color: var(--odi-color-text-critical-hover);
+}
+
+.odi-button--tone-critical.odi-button--variant-plain:active:not(:disabled) {
+  color: var(--odi-color-text-critical-active);
+}
+
+/* Plain + Success Tone */
+.odi-button--tone-success.odi-button--variant-plain {
+  color: var(--odi-color-text-success);
+}
+
+.odi-button--tone-success.odi-button--variant-plain:hover:not(:disabled) {
+  color: var(--odi-color-text-success-hover);
+}
+
+.odi-button--tone-success.odi-button--variant-plain:active:not(:disabled) {
+  color: var(--odi-color-text-success-active);
+}
+
+/* --- State Applications --- */
+
+@media (hover: hover) {
+  .odi-button:hover:not(:disabled) {
+    background: var(--button-bg-hover);
+    box-shadow: var(--button-shadow-hover);
+  }
+}
+
+.odi-button:active:not(:disabled) {
+  background: var(--button-bg-active);
+  box-shadow: var(--button-shadow-active);
+}
+
+.odi-button:focus,
+.odi-button:focus-visible {
+  outline: none;
+  /* Keep generic focus or allow custom? */
+  box-shadow: var(--odi-shadow-focus);
+  /* Note: Re-applying bg-hover on focus might be desired or distinct focus bg */
+  background: var(--button-bg-hover);
+}
+
+.odi-button:disabled {
+  background: var(--button-bg-disabled);
+  color: var(--button-text-disabled);
+  cursor: not-allowed;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  box-shadow: none; /* Remove shadow on disabled */
+}
+
+.odi-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.odi-button__icon * {
+  fill: currentColor;
+}
+
+.odi-button--text-align-start {
+  text-align: start;
+  justify-content: flex-start;
+}
+
+.odi-button--text-align-center {
+  text-align: center;
+  justify-content: center;
+}
+
+.odi-button--text-align-end {
+  text-align: end;
+  justify-content: flex-end;
+}
+
+.odi-button--text-align-left {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.odi-button--text-align-right {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.odi-button--disclosure:is(
+    .odi-button--text-align-start,
+    .odi-button--text-align-left
+  ) {
+  justify-content: space-between;
+}
+
+/* Layout Padding Overrides */
+
+/* Reduce right padding when disclosure is present */
+.odi-button--disclosure:not(.odi-button--variant-plain) {
+  --button-pr: calc(var(--button-padding-side) * 0.5);
+}
+
+/* Reduce left padding when start icon is present (and not icon-only) */
+.odi-button--icon-position-start:not(.odi-button--icon-only):not(
+    .odi-button--variant-plain
+  ) {
+  --button-pl: calc(var(--button-padding-side) * 0.5);
+}
+
+/* Reduce right padding when end icon is present */
+.odi-button--icon-position-end:not(.odi-button--icon-only):not(
+    .odi-button--variant-plain
+  ) {
+  --button-pr: calc(var(--button-padding-side) * 0.5);
+}
