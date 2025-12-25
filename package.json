@@ -1,0 +1,14 @@
+{
+  "name": "odi-ui",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "build": "pnpm --filter @odi/ui build",
+    "test": "pnpm --filter @odi/ui test",
+    "storybook": "pnpm --filter @odi/ui storybook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
