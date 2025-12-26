@@ -9,7 +9,7 @@ import { ButtonGroup } from "../ButtonGroup/index.js";
  * They adhere to the Odi UI design system tokens for consistent coloring, typography, and spacing.
  */
 const meta: Meta<typeof Button> = {
-  title: "Components/Button",
+  title: "Design System/Components/Actions/Button",
   component: Button,
   tags: ["autodocs"],
   parameters: {
