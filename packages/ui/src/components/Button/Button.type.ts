@@ -32,4 +32,8 @@ export interface ButtonProps
    * Allows the button to grow to the width of its container.
    */
   fullWidth?: boolean;
+  /**
+   * Set the button to pressed state.
+   */
+  pressed?: boolean;
 }

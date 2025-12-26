@@ -3,7 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 import clsx from "clsx";
 import type { ButtonProps } from "./Button.type.js";
 import { buttonVariants } from "./Button.variants.js";
-import { CaretDown, CaretUp } from "../../icons/index.js";
+import { ChevronDownIcon, ChevronUpIcon } from "../../icons/index.js";
 import "./Button.css";
 import { Spinner } from "../Spinner/index.js";
 
@@ -24,6 +24,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       fullWidth,
       children,
       disabled,
+      pressed,
       ...props
     },
     ref
@@ -42,6 +43,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         iconPosition: icon && !isIconOnly ? iconPosition : undefined,
         iconOnly: isIconOnly,
         loading,
+        pressed,
         fullWidth,
         className,
       })
@@ -59,6 +61,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             ? props["aria-label"]
             : undefined
         }
+        aria-pressed={pressed}
         {...props}
       >
         {loading ? (
@@ -81,7 +84,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
             {disclosure && (
               <span className="odi-button__icon">
-                {disclosure === "up" ? <CaretUp /> : <CaretDown />}
+                {disclosure === "up" ? <ChevronUpIcon /> : <ChevronDownIcon />}
               </span>
             )}
           </>

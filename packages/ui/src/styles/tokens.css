@@ -283,6 +283,14 @@
     0px -1px 0px 0px rgba(26, 26, 26, 0.17) inset,
     0px 1px 0px 0px rgba(204, 204, 204, 0.5) inset;
   --odi-shadow-border-inset: 0px 0px 0px 1px rgba(0, 0, 0, 0.08);
+  --odi-button-group-segmented-primary-shadow: 0rem -0.0625rem 0rem 0.0625rem rgba(
+        0,
+        0,
+        0,
+        0.8
+      ) inset,
+    0rem 0rem 0rem 0.0625rem rgba(48, 48, 48, 1) inset,
+    0rem 0.03125rem 0rem 0.09375rem rgba(255, 255, 255, 0.25) inset;
   --odi-shadow-focus: 0 0 0 2px #005bd3;
 
   /* Typography - Body XS */
