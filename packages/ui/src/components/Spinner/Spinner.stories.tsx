@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Spinner } from "./Spinner.js";
-import { Button } from "../Button/Button.js";
 
 const meta: Meta<typeof Spinner> = {
-  title: "Components/Spinner",
+  title: "Design System/Components/Feedback Indicators/Spinner",
   component: Spinner,
   tags: ["autodocs"],
   argTypes: {

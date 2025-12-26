@@ -3,7 +3,7 @@ import { ButtonGroup } from "./ButtonGroup.js";
 import { Button } from "../Button/Button.js";
 
 const meta: Meta<typeof ButtonGroup> = {
-  title: "Components/ButtonGroup",
+  title: "Design System/Components/Actions/ButtonGroup",
   component: ButtonGroup,
   tags: ["autodocs"],
   argTypes: {
