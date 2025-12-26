@@ -1,35 +1,11 @@
 import * as React from "react";
-import { type VariantProps } from "class-variance-authority";
 import { Slot } from "@radix-ui/react-slot";
 import clsx from "clsx";
+import type { ButtonProps } from "./Button.type.js";
 import { buttonVariants } from "./Button.variants.js";
 import { CaretDown, CaretUp } from "../../icons/index.js";
 import "./Button.css";
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  /* Whether the button should take the place of its child element */
-  asChild?: boolean;
-
-  /* The icon to display inside the button */
-  icon?: React.ReactNode;
-
-  /* The position of the icon inside the button */
-  iconPosition?: "start" | "end";
-
-  /* Changes the inner text alignment of the button */
-  textAlign?: "start" | "center" | "end" | "left" | "right";
-
-  /* Displays the button with a disclosure icon. Defaults to `down` when set to true */
-  disclosure?: boolean | "up" | "down" | "select";
-
-  /* Replaces button text with a spinner while a background action is being performed */
-  loading?: boolean;
-
-  /* Allows the button to grow to the width of its container */
-  fullWidth?: boolean;
-}
+import { Spinner } from "../Spinner/index.js";
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -56,24 +32,26 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const isDisabled = disabled || loading;
     const Comp = asChild ? Slot : "button";
 
+    const classes = clsx(
+      buttonVariants({
+        variant,
+        tone,
+        size,
+        textAlign,
+        disclosure: disclosure ? true : undefined,
+        iconPosition: icon && !isIconOnly ? iconPosition : undefined,
+        iconOnly: isIconOnly,
+        loading,
+        fullWidth,
+        className,
+      })
+    );
+
     return (
       <Comp
         ref={ref}
         type="button"
-        className={clsx(
-          buttonVariants({
-            variant,
-            tone,
-            size,
-            textAlign,
-            disclosure: disclosure ? true : undefined,
-            iconPosition: icon && !isIconOnly ? iconPosition : undefined,
-            iconOnly: isIconOnly,
-            loading,
-            fullWidth,
-            className,
-          })
-        )}
+        className={classes}
         disabled={isDisabled}
         aria-busy={loading || undefined}
         aria-label={
@@ -83,7 +61,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         }
         {...props}
       >
-        {loading ? null : (
+        {loading ? (
+          <Spinner
+            size="small"
+            accessibilityLabel="Loading"
+            hasFocusableParent={false}
+          />
+        ) : (
           <>
             {icon && iconPosition === "start" && (
               <span className="odi-button__icon">{icon}</span>
