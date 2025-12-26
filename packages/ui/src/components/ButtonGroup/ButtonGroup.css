@@ -1,0 +1,84 @@
+.odi-button-group {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.odi-button-group--wrap {
+  flex-wrap: wrap;
+}
+
+.odi-button-group--no-wrap {
+  flex-wrap: nowrap;
+}
+
+.odi-button-group--full-width {
+  display: flex;
+  width: 100%;
+}
+
+.odi-button-group--full-width > * {
+  flex: 1 1 auto;
+}
+
+/* Gap Modifiers */
+.odi-button-group--gap-extra-tight {
+  gap: var(--odi-space-025);
+}
+
+.odi-button-group--gap-tight {
+  gap: var(--odi-space-050);
+}
+
+.odi-button-group--gap-loose {
+  gap: var(--odi-space-200);
+}
+
+/* Segmented Variant */
+.odi-button-group--segmented {
+  gap: 0;
+}
+
+.odi-button-group--segmented .odi-button {
+  border-radius: 0;
+  border: none;
+}
+
+.odi-button-group--segmented .odi-button:first-child {
+  border-top-left-radius: var(--odi-border-radius-button);
+  border-bottom-left-radius: var(--odi-border-radius-button);
+}
+
+.odi-button-group--segmented .odi-button:last-child {
+  border-top-right-radius: var(--odi-border-radius-button);
+  border-bottom-right-radius: var(--odi-border-radius-button);
+}
+
+/* Prevent double borders in segmented group by pulling subsequent items left */
+.odi-button-group--segmented .odi-button:not(:first-child) {
+  margin-left: -1px;
+}
+
+/* Ensure hovered/focused button is above others so border is visible */
+.odi-button-group--segmented .odi-button:hover,
+.odi-button-group--segmented .odi-button:focus-visible,
+.odi-button-group--segmented .odi-button:active,
+.odi-button-group--segmented .odi-button[aria-pressed="true"] {
+  z-index: 1;
+}
+
+/* Connected Top */
+.odi-button-group--connected-top .odi-button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Specific override for segmented + connectedTop */
+.odi-button-group--segmented.odi-button-group--connected-top
+  .odi-button:first-child {
+  border-top-left-radius: 0;
+}
+.odi-button-group--segmented.odi-button-group--connected-top
+  .odi-button:last-child {
+  border-top-right-radius: 0;
+}
