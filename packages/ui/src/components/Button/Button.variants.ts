@@ -47,6 +47,10 @@ export const buttonVariants = cva("odi-button", {
       true: "odi-button--loading",
       false: "",
     },
+    pressed: {
+      true: "odi-button--pressed",
+      false: "",
+    },
   },
   defaultVariants: {
     variant: "secondary",

@@ -138,6 +138,7 @@
   /* States */
   --button-bg-hover: var(--odi-color-bg-fill-hover);
   --button-bg-active: var(--odi-color-bg-fill-active);
+  --button-bg-pressed: var(--odi-color-bg-fill-selected);
   --button-bg-disabled: var(--odi-color-bg-fill-disabled);
   --button-text-disabled: var(--odi-color-text-disabled);
   --button-border-disabled: var(--odi-color-border-disabled);
@@ -276,6 +277,13 @@
 .odi-button:active:not(:disabled) {
   background: var(--button-bg-active);
   box-shadow: var(--button-shadow-active);
+}
+
+.odi-button:is(.odi-button--pressed, [aria-pressed="true"]),
+.odi-button:is(.odi-button--pressed, [aria-pressed="true"]:not(:disabled)) {
+  background: var(--button-bg-pressed);
+  box-shadow: var(--button-shadow-active);
+  border: none;
 }
 
 .odi-button:focus-visible {

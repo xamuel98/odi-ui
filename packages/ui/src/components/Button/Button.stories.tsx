@@ -76,6 +76,13 @@ const meta: Meta<typeof Button> = {
         defaultValue: { summary: "false" },
       },
     },
+    pressed: {
+      control: "boolean",
+      description: "Set the button to pressed state.",
+      table: {
+        defaultValue: { summary: "false" },
+      },
+    },
     disclosure: {
       control: "boolean",
       description:
@@ -219,6 +226,16 @@ export const Loading: Story = {
   args: {
     children: "Saving...",
     loading: true,
+  },
+};
+
+/**
+ * Buttons can be in a pressed state, indicating activation.
+ */
+export const Pressed: Story = {
+  args: {
+    children: "Pressed Button",
+    pressed: true,
   },
 };
 

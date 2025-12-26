@@ -24,6 +24,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       fullWidth,
       children,
       disabled,
+      pressed,
       ...props
     },
     ref
@@ -42,6 +43,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         iconPosition: icon && !isIconOnly ? iconPosition : undefined,
         iconOnly: isIconOnly,
         loading,
+        pressed,
         fullWidth,
         className,
       })
@@ -59,6 +61,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             ? props["aria-label"]
             : undefined
         }
+        aria-pressed={pressed}
         {...props}
       >
         {loading ? (

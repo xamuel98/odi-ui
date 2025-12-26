@@ -70,13 +70,29 @@
 
 /* Primary Button Overrides in Segmented Group */
 .odi-button-group--segmented .odi-button--variant-primary {
+  --odi-button-group-segmented-primary-shadow: 0rem -0.0625rem 0rem 0.0625rem rgba(
+        0,
+        0,
+        0,
+        0.8
+      ) inset,
+    0rem 0rem 0rem 0.0625rem rgba(48, 48, 48, 1) inset,
+    0rem 0.03125rem 0rem 0.09375rem rgba(255, 255, 255, 0.25) inset;
+
   box-shadow: var(--odi-button-group-segmented-primary-shadow);
 }
 
 @media (hover: hover) {
-  .odi-button-group--segmented .odi-button--variant-primary:hover {
+  /* Prevent hover shadow from overriding active state */
+  .odi-button-group--segmented .odi-button--variant-primary:hover:not(:active) {
     box-shadow: var(--odi-button-group-segmented-primary-shadow);
   }
+}
+
+/* Explicit Active State for Segmented Primary to ensure generic active shadow applies */
+.odi-button-group--segmented
+  .odi-button--variant-primary:active:not(:disabled) {
+  box-shadow: var(--odi-button-shadow-active);
 }
 
 /* Margin left for subsequent primary buttons to overlap border */
