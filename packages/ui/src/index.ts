@@ -1,3 +1,4 @@
 export * from "./icons/index.js";
-export * from "./components/Button/Button.js";
-export * from "./components/Spinner/Spinner.js";
+export { Button } from "./components/Button/index.js";
+export { Spinner } from "./components/Spinner/index.js";
+export { ButtonGroup } from "./components/ButtonGroup/index.js";

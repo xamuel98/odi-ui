@@ -82,7 +82,8 @@
   /* States */
   --button-bg-hover: var(--odi-button-bg-gradient),
     var(--odi-color-bg-fill-brand-hover);
-  --button-bg-active: var(--odi-color-bg-fill-brand-active);
+  --button-bg-active: var(--odi-button-bg-gradient),
+    var(--odi-color-bg-fill-brand-active);
   --button-bg-disabled: var(--odi-color-bg-fill-brand-disabled);
   --button-text-disabled: var(--odi-color-text-brand-on-bg-fill-disabled);
 }
@@ -99,7 +100,8 @@
   /* States */
   --button-bg-hover: var(--odi-button-bg-gradient),
     var(--odi-color-bg-fill-critical-hover);
-  --button-bg-active: var(--odi-color-bg-fill-critical-active);
+  --button-bg-active: var(--odi-button-bg-gradient),
+    var(--odi-color-bg-fill-critical-active);
   --button-bg-disabled: var(--odi-color-bg-fill-disabled);
   --button-text-disabled: var(--odi-color-text-disabled);
 }
@@ -116,7 +118,8 @@
   /* States */
   --button-bg-hover: var(--odi-button-bg-gradient),
     var(--odi-color-bg-fill-success-hover);
-  --button-bg-active: var(--odi-color-bg-fill-success-active);
+  --button-bg-active: var(--odi-button-bg-gradient),
+    var(--odi-color-bg-fill-success-active);
   --button-bg-disabled: var(--odi-color-bg-fill-disabled);
   --button-text-disabled: var(--odi-color-text-disabled);
 }
@@ -275,7 +278,6 @@
   box-shadow: var(--button-shadow-active);
 }
 
-.odi-button:focus,
 .odi-button:focus-visible {
   outline: none;
   /* Keep generic focus or allow custom? */

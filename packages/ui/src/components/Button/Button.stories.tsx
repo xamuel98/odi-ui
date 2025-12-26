@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "./Button.js";
-import { CaretDown, CaretUp } from "../../icons/index.js";
+import { ChevronDownIcon, ChevronUpIcon } from "../../icons/index.js";
 import { useState } from "react";
+import { ButtonGroup } from "../ButtonGroup/index.js";
 
 /**
  * Buttons are used to trigger actions or navigate to other pages.
@@ -191,8 +192,8 @@ export const FullWidth: Story = {
 export const WithIcons: Story = {
   render: () => (
     <div style={{ display: "flex", gap: 16 }}>
-      <Button icon={<CaretUp />}>Edit</Button>
-      <Button icon={<CaretDown />} iconPosition="end">
+      <Button icon={<ChevronUpIcon />}>Edit</Button>
+      <Button icon={<ChevronDownIcon />} iconPosition="end">
         Next
       </Button>
     </div>
@@ -205,8 +206,8 @@ export const WithIcons: Story = {
 export const IconOnly: Story = {
   render: () => (
     <div style={{ display: "flex", gap: 16 }}>
-      <Button icon={<CaretUp />} iconOnly />
-      <Button icon={<CaretDown />} iconOnly />
+      <Button icon={<ChevronUpIcon />} iconOnly />
+      <Button icon={<ChevronDownIcon />} iconOnly />
     </div>
   ),
 };
@@ -297,6 +298,28 @@ export const RightAlignedDisclosure = () => {
     </Button>
   );
 };
+
+/**
+ * Buttons can be grouped to create a split button.
+ */
+export const SplitButton = () => (
+  <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+    <ButtonGroup variant="segmented">
+      <Button>Default Action</Button>
+      <Button icon={<ChevronDownIcon />} iconOnly aria-label="More options" />
+    </ButtonGroup>
+
+    <ButtonGroup variant="segmented">
+      <Button variant="primary">Primary Action</Button>
+      <Button
+        variant="primary"
+        icon={<ChevronDownIcon />}
+        iconOnly
+        aria-label="More options"
+      />
+    </ButtonGroup>
+  </div>
+);
 
 /**
  * A matrix showing all permutations of variants and tones.
