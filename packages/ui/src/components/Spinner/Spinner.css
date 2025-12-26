@@ -1,0 +1,13 @@
+.odi-spinner {
+  display: block;
+}
+
+.odi-spinner--size-small {
+  width: 20px;
+  height: 20px;
+}
+
+.odi-spinner--size-large {
+  width: 44px;
+  height: 44px;
+}
