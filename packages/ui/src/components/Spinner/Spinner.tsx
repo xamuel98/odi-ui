@@ -24,6 +24,7 @@ export const Spinner = ({
       role={role}
       aria-label={hasFocusableParent ? undefined : label}
       aria-hidden={hasFocusableParent}
+      focusable={hasFocusableParent ? "false" : undefined}
       {...props}
     >
       {/* Icon from SVG Spinners by Utkarsh Verma - https://github.com/n3r4zzurr0/svg-spinners/blob/main/LICENSE */}
