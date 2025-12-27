@@ -1,0 +1,254 @@
+.odi-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  border-radius: var(--odi-border-radius-popover);
+  background-color: var(--odi-color-bg-surface);
+  overflow: hidden;
+  box-shadow: var(--odi-shadow-elevation-200);
+}
+
+.odi-banner--in-card {
+  box-shadow: none;
+}
+
+/* Header Section */
+.odi-banner__header {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  padding: 0 var(--odi-space-200) 0 var(--odi-space-300);
+  gap: var(--odi-space-100);
+}
+
+.odi-banner__icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--odi-border-radius-200);
+  /* Default transparent, colored only in hideTitle/specific variants */
+  background-color: transparent;
+  color: inherit;
+}
+
+/* Header Content alignment adjust */
+.odi-banner__header-content {
+  display: flex;
+  align-items: center; /* Ensure vertical center alignment */
+  align-self: flex-start; /* Allow multiline checks */
+  padding: var(--odi-space-300) 0;
+  gap: var(--odi-space-200); /* Increased gap for icon box separation */
+  flex: 1 0 0;
+}
+
+.odi-banner__icon {
+  flex-shrink: 0;
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.odi-banner__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.odi-banner__icon svg,
+.odi-banner__icon svg path {
+  fill: currentColor;
+}
+
+.odi-banner__title {
+  flex-grow: 1;
+  font-family: var(--odi-font-family-sans);
+  font-weight: var(--odi-font-weight-medium);
+  font-size: var(--odi-typography-heading-sm-font-size);
+  line-height: var(--odi-typography-heading-sm-line-height);
+  margin-block: 0;
+}
+
+.odi-banner__dismiss {
+  display: flex;
+  padding: var(--odi-space-100);
+  align-items: center;
+  gap: var(--odi-space-200);
+}
+
+/* Content Section */
+.odi-banner__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  padding: var(--odi-space-300) var(--odi-space-400) var(--odi-space-400);
+  gap: var(--odi-space-200);
+}
+
+.odi-banner__content-text {
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  /* Alignment fix for text next to icon */
+  padding-top: 0.125rem;
+}
+
+.odi-banner__content-text:not(.odi-banner__content-text--in-card) {
+  color: var(--odi-color-text-default);
+}
+
+/* Actions Footer */
+.odi-banner__actions {
+  display: flex;
+  gap: var(--odi-space-200);
+}
+
+/* Tones Configuration */
+
+/* Info */
+.odi-banner--tone-info .odi-banner__header {
+  background-color: var(--odi-color-bg-fill-info);
+  color: var(--odi-color-text-info-on-bg-fill);
+}
+.odi-banner--tone-info.odi-banner--in-card {
+  background-color: var(--odi-color-bg-surface-info);
+}
+.odi-banner--tone-info .odi-banner__dismiss {
+  color: var(--odi-color-text-info-on-bg-fill);
+}
+
+/* Success */
+.odi-banner--tone-success .odi-banner__header {
+  background-color: var(--odi-color-bg-fill-success);
+  color: var(--odi-color-text-success-on-bg-fill);
+}
+.odi-banner--tone-success.odi-banner--in-card {
+  background-color: var(--odi-color-bg-surface-success);
+}
+.odi-banner--tone-success .odi-banner__dismiss {
+  color: var(--odi-color-text-success-on-bg-fill);
+}
+
+/* Warning */
+.odi-banner--tone-warning .odi-banner__header {
+  background-color: var(--odi-color-bg-fill-warning);
+  color: var(--odi-color-text-warning-on-bg-fill);
+}
+.odi-banner--tone-warning.odi-banner--in-card {
+  background-color: var(--odi-color-bg-surface-warning);
+}
+.odi-banner--tone-warning .odi-banner__dismiss {
+  color: var(--odi-color-text-warning-on-bg-fill);
+}
+
+/* Critical */
+.odi-banner--tone-critical .odi-banner__header {
+  background-color: var(--odi-color-bg-fill-critical);
+  color: var(--odi-color-text-critical-on-bg-fill);
+}
+.odi-banner--tone-critical.odi-banner--in-card {
+  background-color: var(--odi-color-bg-surface-critical);
+}
+.odi-banner--tone-critical .odi-banner__dismiss {
+  color: var(--odi-color-text-critical-on-bg-fill);
+}
+
+/* In-Card Overrides */
+.odi-banner--in-card .odi-banner__header {
+  background-color: transparent;
+  color: inherit;
+  padding-bottom: 0;
+}
+
+/* If in-card has tone: */
+.odi-banner--in-card.odi-banner--tone-info,
+.odi-banner--in-card.odi-banner--tone-info .odi-banner__dismiss {
+  color: var(--odi-color-text-info);
+}
+.odi-banner--in-card.odi-banner--tone-success,
+.odi-banner--in-card.odi-banner--tone-success .odi-banner__dismiss {
+  color: var(--odi-color-text-success);
+}
+.odi-banner--in-card.odi-banner--tone-warning,
+.odi-banner--in-card.odi-banner--tone-warning .odi-banner__dismiss {
+  color: var(--odi-color-text-warning);
+}
+.odi-banner--in-card.odi-banner--tone-critical,
+.odi-banner--in-card.odi-banner--tone-critical .odi-banner__dismiss {
+  color: var(--odi-color-text-critical);
+}
+
+/* Content spacing in card */
+.odi-banner--in-card .odi-banner__content {
+  padding-top: var(--odi-space-100);
+}
+
+/* Hide Title Variant Logic */
+
+/* Reset Banner BG/Border */
+.odi-banner--hide-title {
+  background-color: var(--odi-color-bg-surface); /* White */
+  border: 1px solid var(--odi-color-border-neutral-subtle); /* Optional border */
+  box-shadow: var(--odi-shadow-elevation-200);
+}
+
+.odi-banner--hide-title .odi-banner__header {
+  background-color: transparent;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Icon Container Styling for Hide Title */
+.odi-banner--hide-title .odi-banner__icon-container {
+  padding: var(--odi-space-100);
+  flex-shrink: 0;
+}
+.odi-banner--hide-title .odi-banner__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Tone Mapping for Icon Container */
+.odi-banner--hide-title.odi-banner--tone-info .odi-banner__icon-container {
+  background-color: var(--odi-color-bg-fill-info);
+}
+.odi-banner--hide-title.odi-banner--tone-success .odi-banner__icon-container {
+  background-color: var(--odi-color-bg-fill-success);
+}
+.odi-banner--hide-title.odi-banner--tone-warning .odi-banner__icon-container {
+  background-color: var(--odi-color-bg-fill-warning);
+}
+.odi-banner--hide-title.odi-banner--tone-critical .odi-banner__icon-container {
+  background-color: var(--odi-color-bg-fill-critical);
+}
+
+/* Tone Mapping for Icon in Icon Container */
+.odi-banner--hide-title.odi-banner--tone-info .odi-banner__icon {
+  color: var(--odi-color-text-info-on-bg-fill);
+}
+.odi-banner--hide-title.odi-banner--tone-success .odi-banner__icon {
+  color: var(--odi-color-text-success-on-bg-fill);
+}
+.odi-banner--hide-title.odi-banner--tone-warning .odi-banner__icon {
+  color: var(--odi-color-text-warning-on-bg-fill);
+}
+.odi-banner--hide-title.odi-banner--tone-critical .odi-banner__icon {
+  color: var(--odi-color-text-critical-on-bg-fill);
+}
+
+/* Ensure Content Text is Dark */
+.odi-banner--hide-title .odi-banner__content-text--in-card {
+  color: var(--odi-color-text-default);
+}
+
+/* Dismiss Icon Color Override */
+.odi-banner--hide-title .odi-banner__dismiss {
+  color: var(--odi-color-icon-secondary);
+}
+
+/* Mobile / Responsive - placeholder for now */
+@media (max-width: 48rem) {
+  .odi-banner {
+    border-radius: 0;
+  }
+}
