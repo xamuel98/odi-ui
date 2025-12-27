@@ -1,0 +1,122 @@
+.odi-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--odi-space-100);
+  border-radius: var(--odi-border-radius-100);
+  white-space: nowrap;
+
+  /* Font settings - usually smaller than body text */
+  font-family: var(--odi-font-family-sans);
+  font-weight: var(--odi-font-weight-regular);
+  font-size: var(--odi-typography-body-sm-font-size);
+  /* Assuming badges are small, might need a smaller token if available, but body-sm is safe */
+  line-height: var(--odi-typography-body-sm-line-height);
+
+  /* Default Colors (Fallback) */
+  background-color: var(--odi-color-bg-surface);
+  color: var(--odi-color-text-default);
+  border-radius: var(--odi-border-radius-button);
+
+  padding: var(--odi-space-100) var(--odi-space-200);
+}
+
+.odi-badge:is(.odi-badge--has-icon) {
+  padding-left: 0;
+  gap: 0;
+}
+
+.odi-badge--size-small {
+  padding: var(--odi-space-050) var(--odi-space-200);
+  font-size: 0.75rem; /* Fallback if no specific token */
+}
+
+/* Tones */
+/* Default: Neutral Gray */
+.odi-badge--tone-default {
+  background-color: var(--odi-color-bg-surface-secondary);
+  color: var(--odi-color-text-secondary);
+}
+
+/* Info: Azure */
+.odi-badge--tone-info {
+  background-color: var(--odi-color-bg-fill-info-secondary);
+  color: var(--odi-color-text-info);
+}
+
+/* Success: Green */
+.odi-badge--tone-success {
+  background-color: var(--odi-color-bg-fill-success-secondary);
+  color: var(--odi-color-text-success);
+}
+
+/* Attention: Yellow (Caution) */
+.odi-badge--tone-attention {
+  background-color: var(--odi-color-bg-fill-caution-secondary);
+  color: var(--odi-color-text-caution);
+}
+
+/* Warning: Orange */
+.odi-badge--tone-warning {
+  background-color: var(--odi-color-bg-fill-warning-secondary);
+  color: var(--odi-color-text-warning);
+}
+
+/* Critical: Red */
+.odi-badge--tone-critical {
+  background-color: var(--odi-color-bg-fill-critical-secondary);
+  color: var(--odi-color-text-critical);
+}
+
+/* Elements */
+.odi-badge__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25em; /* Scale with font */
+  min-height: 1.25em;
+}
+
+.odi-badge__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.odi-badge__icon svg,
+.odi-badge__icon svg path {
+  fill: currentColor;
+}
+
+/* PIP */
+.odi-badge__pip {
+  width: 0.5rem; /* 8px equivalent */
+  height: 0.5rem;
+  border-radius: var(--odi-border-radius-100);
+  border: 1.5px solid currentColor; /* Or transparent if filled */
+  /* Using currentColor allows it to inherit the text color of the badge tone */
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+/* Pip States */
+/* Incomplete: Empty circle (border only) */
+.odi-badge__pip--incomplete {
+  background-color: transparent;
+  border-color: currentColor;
+}
+
+/* Partially Complete: Half filled? Or specific styling */
+/* Standard UI often uses a different icon or a specific style. 
+   css-only half-circle is complex. 
+   Assuming simpler abstraction for now: standard pip logic. 
+   Let's make 'partiallyComplete' slightly lighter filled. */
+.odi-badge__pip--partiallyComplete {
+  background: conic-gradient(currentColor 50%, transparent 0);
+  border-color: currentColor;
+}
+
+/* Complete: Filled circle */
+.odi-badge__pip--complete {
+  background-color: currentColor;
+  border-color: currentColor;
+}
