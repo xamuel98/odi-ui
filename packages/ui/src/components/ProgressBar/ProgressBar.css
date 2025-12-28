@@ -1,0 +1,52 @@
+.odi-progress-bar {
+  width: 100%;
+  background-color: var(--odi-color-bg-fill-tertiary);
+  border-radius: var(--odi-border-radius-100);
+  overflow: hidden;
+}
+
+.odi-progress-bar__fill {
+  height: 100%;
+  width: 0%; /* Default starting width */
+  border-radius: var(--odi-border-radius-100) 0 0 var(--odi-border-radius-100);
+  transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.odi-progress-bar__fill--no-animation {
+  transition: none;
+}
+
+/* Sizes */
+.odi-progress-bar--size-small {
+  height: var(--odi-space-200);
+}
+
+.odi-progress-bar--size-medium {
+  height: var(--odi-space-400);
+}
+
+.odi-progress-bar--size-large {
+  height: var(--odi-space-800);
+}
+
+/* Tones */
+
+/* Highlight (Default - Informational) */
+.odi-progress-bar--tone-highlight .odi-progress-bar__fill {
+  background-color: var(--odi-color-bg-fill-info);
+}
+
+/* Primary */
+.odi-progress-bar--tone-primary .odi-progress-bar__fill {
+  background-color: var(--odi-color-bg-fill-brand);
+}
+
+/* Success */
+.odi-progress-bar--tone-success .odi-progress-bar__fill {
+  background-color: var(--odi-color-bg-fill-success);
+}
+
+/* Critical */
+.odi-progress-bar--tone-critical .odi-progress-bar__fill {
+  background-color: var(--odi-color-bg-fill-critical);
+}
