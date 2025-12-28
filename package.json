@@ -10,5 +10,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "chromatic": "^13.3.4"
+  }
 }
