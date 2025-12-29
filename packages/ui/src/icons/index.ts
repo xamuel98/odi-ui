@@ -7,3 +7,4 @@ export { CheckIcon } from "./CheckIcon.js";
 export { InfoIcon } from "./InfoIcon.js";
 export { XIcon } from "./XIcon.js";
 export { PersonIcon } from "./PersonIcon.js";
+export { ImageIcon } from "./ImageIcon.js";
