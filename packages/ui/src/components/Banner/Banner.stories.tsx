@@ -29,6 +29,14 @@ const meta: Meta<typeof Banner> = {
 export default meta;
 type Story = StoryObj<typeof Banner>;
 
+const TONES = ["info", "success", "warning", "critical"] as const;
+const ICONS = [
+  <InfoIcon key="info" />,
+  <CheckIcon key="success" />,
+  <AlertTriangleIcon key="warning" />,
+  <AlertDiamondIcon key="critical" />,
+];
+
 export const Info: Story = {
   args: {
     title: "Informational Banner",
@@ -69,30 +77,25 @@ export const Critical: Story = {
   },
 };
 
-export const InCard = () => {
-  const tones = ["info", "success", "warning", "critical"] as const;
-  const icons = [
-    <InfoIcon />,
-    <CheckIcon />,
-    <AlertTriangleIcon />,
-    <AlertDiamondIcon />,
-  ];
-
-  return (
-    <div style={{ display: "grid", gap: 24, padding: 20 }}>
-      {tones.map((tone, index) => (
-        <Banner
-          key={tone}
-          tone={tone}
-          title="In Card Banner"
-          children="This banner is styled to fit within a card."
-          inCard
-          icon={icons[index]}
-          onDismiss={() => alert("Dismissed")}
-        />
-      ))}
-    </div>
-  );
+export const InCard: Story = {
+  render: () => {
+    return (
+      <div style={{ display: "grid", gap: 24, padding: 20 }}>
+        {TONES.map((tone, index) => (
+          <Banner
+            key={tone}
+            tone={tone}
+            title="In Card Banner"
+            inCard
+            icon={ICONS[index]}
+            onDismiss={() => alert("Dismissed")}
+          >
+            This banner is styled to fit within a card.
+          </Banner>
+        ))}
+      </div>
+    );
+  },
 };
 
 export const WithActions: Story = {
@@ -122,28 +125,23 @@ export const Dismissible: Story = {
   },
 };
 
-export const HideHeader = () => {
-  const tones = ["info", "success", "warning", "critical"] as const;
-  const icons = [
-    <InfoIcon />,
-    <CheckIcon />,
-    <AlertTriangleIcon />,
-    <AlertDiamondIcon />,
-  ];
-
-  return (
-    <div style={{ display: "grid", gap: 24, padding: 20 }}>
-      {tones.map((tone, index) => (
-        <Banner
-          key={tone}
-          tone={tone}
-          title="This title is hidden"
-          hideTitle
-          children="Message. Link text"
-          icon={icons[index]}
-          onDismiss={() => alert("Dismissed")}
-        />
-      ))}
-    </div>
-  );
+export const HideHeader: Story = {
+  render: () => {
+    return (
+      <div style={{ display: "grid", gap: 24, padding: 20 }}>
+        {TONES.map((tone, index) => (
+          <Banner
+            key={tone}
+            tone={tone}
+            title="This title is hidden"
+            hideTitle
+            icon={ICONS[index]}
+            onDismiss={() => alert("Dismissed")}
+          >
+            Message. Link text
+          </Banner>
+        ))}
+      </div>
+    );
+  },
 };

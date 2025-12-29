@@ -40,32 +40,67 @@ const meta: Meta<typeof Spinner> = {
 export default meta;
 type Story = StoryObj<typeof Spinner>;
 
+const SIZES = ["small", "large"] as const;
+const TYPES = ["ring", "ring-with-bg"] as const;
+
 export const Default: Story = {
   args: {
     size: "large",
   },
 };
 
-export const Small: Story = {
-  args: {
-    size: "small",
+export const Sizes: Story = {
+  render: (args) => {
+    return (
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        {SIZES.map((size) => (
+          <div
+            key={size}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 8,
+            }}
+          >
+            <span style={{ fontSize: 12, fontFamily: "monospace" }}>
+              {size}
+            </span>
+            <Spinner {...args} size={size} />
+          </div>
+        ))}
+      </div>
+    );
   },
-};
-
-export const Large: Story = {
-  args: {
-    size: "large",
-  },
-};
-
-export const Ring: Story = {
   args: {
     type: "ring",
   },
 };
 
-export const RingWithBg: Story = {
+export const Types: Story = {
+  render: (args) => {
+    return (
+      <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+        {TYPES.map((type) => (
+          <div
+            key={type}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 8,
+            }}
+          >
+            <span style={{ fontSize: 12, fontFamily: "monospace" }}>
+              {type}
+            </span>
+            <Spinner {...args} type={type} />
+          </div>
+        ))}
+      </div>
+    );
+  },
   args: {
-    type: "ring-with-bg",
+    size: "large",
   },
 };
