@@ -42,13 +42,23 @@ const meta: Meta<typeof ButtonGroup> = {
 export default meta;
 type Story = StoryObj<typeof ButtonGroup>;
 
+const GAPS = ["extraTight", "tight", "loose"] as const;
+const LABELS = ["First", "Second", "Third"] as const;
+
 export const Default: Story = {
   render: (args) => (
-    <ButtonGroup {...args}>
-      <Button>Button 1</Button>
-      <Button>Button 2</Button>
-      <Button>Button 3</Button>
-    </ButtonGroup>
+    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+      {GAPS.map((gap) => (
+        <div key={gap}>
+          <div style={{ marginBottom: 8, fontSize: 12 }}>Gap: {gap}</div>
+          <ButtonGroup {...args} gap={gap}>
+            <Button>Button 1</Button>
+            <Button>Button 2</Button>
+            <Button>Button 3</Button>
+          </ButtonGroup>
+        </div>
+      ))}
+    </div>
   ),
   args: {
     gap: "loose",
@@ -58,9 +68,9 @@ export const Default: Story = {
 export const Segmented: Story = {
   render: (args) => (
     <ButtonGroup {...args}>
-      <Button>First</Button>
-      <Button>Second</Button>
-      <Button>Third</Button>
+      {LABELS.map((text) => (
+        <Button key={text}>{text}</Button>
+      ))}
     </ButtonGroup>
   ),
   args: {

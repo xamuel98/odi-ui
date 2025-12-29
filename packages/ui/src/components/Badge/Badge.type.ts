@@ -27,7 +27,7 @@ interface BaseBadgeProps
   /**
    * Defaults to 'medium'.
    */
-  size?: "medium" | "small";
+  size?: "medium" | "small" | undefined;
   /**
    * Pass a custom accessibilityLabel.
    */

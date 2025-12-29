@@ -4,10 +4,6 @@ import { ChevronDownIcon, ChevronUpIcon } from "../../icons/index.js";
 import { useState } from "react";
 import { ButtonGroup } from "../ButtonGroup/index.js";
 
-/**
- * Buttons are used to trigger actions or navigate to other pages.
- * They adhere to the Odi UI design system tokens for consistent coloring, typography, and spacing.
- */
 const meta: Meta<typeof Button> = {
   title: "Design System/Components/Actions/Button",
   component: Button,
@@ -105,9 +101,10 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-/**
- * The default button style, used for secondary actions.
- */
+const SIZES = ["micro", "medium", "large"] as const;
+const VARIANTS = ["primary", "secondary", "tertiary", "plain"] as const;
+const TONES = ["default", "critical", "success"] as const;
+
 export const Default: Story = {
   args: {
     children: "Secondary Button",
@@ -115,9 +112,6 @@ export const Default: Story = {
   },
 };
 
-/**
- * Used for the main action on a screen.
- */
 export const Primary: Story = {
   args: {
     children: "Primary Button",
@@ -125,9 +119,6 @@ export const Primary: Story = {
   },
 };
 
-/**
- * Used for less important actions.
- */
 export const Tertiary: Story = {
   args: {
     children: "Tertiary Button",
@@ -135,9 +126,6 @@ export const Tertiary: Story = {
   },
 };
 
-/**
- * Used for the lowest priority actions, resembling a link.
- */
 export const Plain: Story = {
   args: {
     children: "Plain Button",
@@ -145,9 +133,6 @@ export const Plain: Story = {
   },
 };
 
-/**
- * Destructive actions should use the `critical` tone.
- */
 export const Critical: Story = {
   args: {
     children: "Delete Item",
@@ -156,9 +141,6 @@ export const Critical: Story = {
   },
 };
 
-/**
- * Positive confirmation actions should use the `success` tone.
- */
 export const Success: Story = {
   args: {
     children: "Mark Complete",
@@ -167,22 +149,20 @@ export const Success: Story = {
   },
 };
 
-/**
- * Buttons come in three sizes: `micro`, `medium` (default), and `large`.
- */
 export const Sizes: Story = {
-  render: () => (
-    <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-      <Button size="micro">Micro</Button>
-      <Button size="medium">Medium</Button>
-      <Button size="large">Large</Button>
-    </div>
-  ),
+  render: (args) => {
+    return (
+      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        {SIZES.map((size) => (
+          <Button key={size} {...args} size={size}>
+            {size.charAt(0).toUpperCase() + size.slice(1)}
+          </Button>
+        ))}
+      </div>
+    );
+  },
 };
 
-/**
- * Buttons can span the full width of their container.
- */
 export const FullWidth: Story = {
   args: {
     children: "Full Width Button",
@@ -193,35 +173,28 @@ export const FullWidth: Story = {
   },
 };
 
-/**
- * Buttons can include an icon at the start or end of the label.
- */
 export const WithIcons: Story = {
-  render: () => (
+  render: (args) => (
     <div style={{ display: "flex", gap: 16 }}>
-      <Button icon={<ChevronUpIcon />}>Edit</Button>
-      <Button icon={<ChevronDownIcon />} iconPosition="end">
+      <Button {...args} icon={<ChevronUpIcon />}>
+        Edit
+      </Button>
+      <Button {...args} icon={<ChevronDownIcon />} iconPosition="end">
         Next
       </Button>
     </div>
   ),
 };
 
-/**
- * Buttons can include an icon only.
- */
 export const IconOnly: Story = {
-  render: () => (
+  render: (args) => (
     <div style={{ display: "flex", gap: 16 }}>
-      <Button icon={<ChevronUpIcon />} iconOnly />
-      <Button icon={<ChevronDownIcon />} iconOnly />
+      <Button {...args} icon={<ChevronUpIcon />} iconOnly />
+      <Button {...args} icon={<ChevronDownIcon />} iconOnly />
     </div>
   ),
 };
 
-/**
- * Buttons can display a loading state, which disables interaction.
- */
 export const Loading: Story = {
   args: {
     children: "Saving...",
@@ -229,9 +202,6 @@ export const Loading: Story = {
   },
 };
 
-/**
- * Buttons can be in a pressed state, indicating activation.
- */
 export const Pressed: Story = {
   args: {
     children: "Pressed Button",
@@ -239,48 +209,39 @@ export const Pressed: Story = {
   },
 };
 
-/**
- * Buttons can be disabled to prevent interaction.
- */
-export const DisabledState = () => {
-  const variants = ["primary", "secondary", "tertiary", "plain"] as const;
-  const tones = ["default", "critical", "success"] as const;
-
-  return (
-    <div style={{ display: "grid", gap: 24, padding: 20 }}>
-      {variants.map((variant) => (
-        <div
-          key={variant}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "100px repeat(3, 1fr)",
-            gap: 16,
-            alignItems: "center",
-          }}
-        >
-          <span style={{ fontFamily: "monospace", fontSize: 12 }}>
-            Disabled {variant}
-          </span>
-          {tones.map((tone) => (
-            // implicit default tone for first column
-            <Button
-              key={`${variant}-${tone}`}
-              variant={variant}
-              tone={tone === "default" ? undefined : tone}
-              disabled
-            >
-              {tone === "default" ? "Neutral" : tone}
-            </Button>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
+export const DisabledState: Story = {
+  render: () => {
+    return (
+      <div style={{ display: "grid", gap: 24, padding: 20 }}>
+        {VARIANTS.map((variant) => (
+          <div
+            key={variant}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "100px repeat(3, 1fr)",
+              gap: 16,
+              alignItems: "center",
+            }}
+          >
+            <span style={{ fontFamily: "monospace", fontSize: 12 }}>
+              Disabled {variant}
+            </span>
+            {TONES.map((tone) => (
+              <Button
+                key={`${variant}-${tone}`}
+                variant={variant}
+                tone={tone === "default" ? undefined : tone}
+                disabled
+              >
+                {tone === "default" ? "Neutral" : tone}
+              </Button>
+            ))}
+          </div>
+        ))}
+      </div>
+    );
+  },
 };
-
-/**
- * Buttons can include a disclosure chevron, typically used for menus or collapsible content.
- */
 
 // A plain button with a disclosure chevron.
 export const PlainDisclosure = () => {
@@ -316,9 +277,6 @@ export const RightAlignedDisclosure = () => {
   );
 };
 
-/**
- * Buttons can be grouped to create a split button.
- */
 export const SplitButton = () => (
   <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
     <ButtonGroup variant="segmented">
@@ -338,40 +296,35 @@ export const SplitButton = () => (
   </div>
 );
 
-/**
- * A matrix showing all permutations of variants and tones.
- */
-export const VariantMatrix = () => {
-  const variants = ["primary", "secondary", "tertiary", "plain"] as const;
-  const tones = ["default", "critical", "success"] as const;
-
-  return (
-    <div style={{ display: "grid", gap: 24, padding: 20 }}>
-      {variants.map((variant) => (
-        <div
-          key={variant}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "100px repeat(3, 1fr)",
-            gap: 16,
-            alignItems: "center",
-          }}
-        >
-          <span style={{ fontFamily: "monospace", fontSize: 12 }}>
-            {variant}
-          </span>
-          {tones.map((tone) => (
-            // implicit default tone for first column
-            <Button
-              key={`${variant}-${tone}`}
-              variant={variant}
-              tone={tone === "default" ? undefined : tone}
-            >
-              {tone === "default" ? "Neutral" : tone}
-            </Button>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
+export const VariantMatrix: Story = {
+  render: () => {
+    return (
+      <div style={{ display: "grid", gap: 24, padding: 20 }}>
+        {VARIANTS.map((variant) => (
+          <div
+            key={variant}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "100px repeat(3, 1fr)",
+              gap: 16,
+              alignItems: "center",
+            }}
+          >
+            <span style={{ fontFamily: "monospace", fontSize: 12 }}>
+              {variant}
+            </span>
+            {TONES.map((tone) => (
+              <Button
+                key={`${variant}-${tone}`}
+                variant={variant}
+                tone={tone === "default" ? undefined : tone}
+              >
+                {tone === "default" ? "Neutral" : tone}
+              </Button>
+            ))}
+          </div>
+        ))}
+      </div>
+    );
+  },
 };
