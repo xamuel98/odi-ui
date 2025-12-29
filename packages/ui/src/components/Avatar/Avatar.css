@@ -1,0 +1,107 @@
+.odi-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-color: var(--odi-color-bg-surface-secondary);
+  color: var(--odi-color-text-default);
+  font-family: var(--odi-font-family-sans);
+  font-weight: var(--odi-font-weight-regular);
+  user-select: none;
+}
+
+.odi-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Sizes */
+.odi-avatar--size-xs {
+  width: var(--odi-space-500);
+  height: var(--odi-space-500);
+  font-size: var(--odi-typography-body-xs-font-size);
+}
+.odi-avatar--size-sm {
+  width: var(--odi-space-600);
+  height: var(--odi-space-600);
+  font-size: var(--odi-typography-body-xs-font-size);
+}
+.odi-avatar--size-md {
+  width: var(--odi-space-700);
+  height: var(--odi-space-700);
+  font-size: var(--odi-typography-body-sm-font-size);
+}
+.odi-avatar--size-lg {
+  width: var(--odi-space-800);
+  height: var(--odi-space-800);
+  font-size: var(--odi-typography-body-sm-font-size);
+}
+.odi-avatar--size-xl {
+  width: var(--odi-space-1000);
+  height: var(--odi-space-1000);
+  font-size: var(--odi-typography-body-md-font-size);
+}
+
+/* Shapes and Border Radius Combinations */
+.odi-avatar--shape-circle {
+  border-radius: var(--odi-border-radius-full);
+}
+
+.odi-avatar--shape-square.odi-avatar--size-xs {
+  border-radius: var(--odi-space-100);
+}
+.odi-avatar--shape-square.odi-avatar--size-sm {
+  border-radius: var(--odi-space-150);
+}
+.odi-avatar--shape-square.odi-avatar--size-md {
+  border-radius: var(--odi-space-150);
+}
+.odi-avatar--shape-square.odi-avatar--size-lg {
+  border-radius: var(--odi-space-200);
+}
+.odi-avatar--shape-square.odi-avatar--size-xl {
+  border-radius: var(--odi-space-200);
+}
+
+/* Styles (Colors) */
+.odi-avatar--style-1 {
+  background-color: var(--odi-color-specialty-avatar-one-bg-fill);
+  color: var(--odi-color-specialty-avatar-one-text-on-bg-fill);
+}
+.odi-avatar--style-2 {
+  background-color: var(--odi-color-specialty-avatar-two-bg-fill);
+  color: var(--odi-color-specialty-avatar-two-text-on-bg-fill);
+}
+.odi-avatar--style-3 {
+  background-color: var(--odi-color-specialty-avatar-three-bg-fill);
+  color: var(--odi-color-specialty-avatar-three-text-on-bg-fill);
+}
+.odi-avatar--style-4 {
+  background-color: var(--odi-color-specialty-avatar-four-bg-fill);
+  color: var(--odi-color-specialty-avatar-four-text-on-bg-fill);
+}
+.odi-avatar--style-5 {
+  background-color: var(--odi-color-specialty-avatar-five-bg-fill);
+  color: var(--odi-color-specialty-avatar-five-text-on-bg-fill);
+}
+
+/* Generic Fallback Style (e.g., if no name provided) */
+.odi-avatar--style-default {
+  background-color: var(--odi-color-specialty-avatar-bg-fill);
+  color: var(--odi-color-specialty-avatar-text-on-bg-fill);
+}
+
+.odi-avatar__initials {
+  line-height: 1;
+}
+
+.odi-avatar__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
