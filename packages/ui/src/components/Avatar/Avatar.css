@@ -53,19 +53,19 @@
 }
 
 .odi-avatar--shape-square.odi-avatar--size-xs {
-  border-radius: var(--odi-space-100);
+  border-radius: var(--odi-border-radius-100);
 }
 .odi-avatar--shape-square.odi-avatar--size-sm {
-  border-radius: var(--odi-space-150);
+  border-radius: var(--odi-border-radius-150);
 }
 .odi-avatar--shape-square.odi-avatar--size-md {
-  border-radius: var(--odi-space-150);
+  border-radius: var(--odi-border-radius-200);
 }
 .odi-avatar--shape-square.odi-avatar--size-lg {
-  border-radius: var(--odi-space-200);
+  border-radius: var(--odi-border-radius-200);
 }
 .odi-avatar--shape-square.odi-avatar--size-xl {
-  border-radius: var(--odi-space-200);
+  border-radius: var(--odi-border-radius-200);
 }
 
 /* Styles (Colors) */

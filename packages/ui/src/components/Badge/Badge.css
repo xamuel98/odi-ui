@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center;
   gap: var(--odi-space-100);
-  border-radius: var(--odi-border-radius-100);
   white-space: nowrap;
 
   /* Font settings - usually smaller than body text */
@@ -16,7 +15,7 @@
   /* Default Colors (Fallback) */
   background-color: var(--odi-color-bg-surface);
   color: var(--odi-color-text-default);
-  border-radius: var(--odi-border-radius-button);
+  border-radius: var(--odi-border-radius-200);
 
   padding: var(--odi-space-100) var(--odi-space-200);
 }
@@ -28,6 +27,7 @@
 
 .odi-badge--size-small {
   padding: var(--odi-space-050) var(--odi-space-200);
+  border-radius: var(--odi-border-radius-100);
   font-size: 0.75rem; /* Fallback if no specific token */
 }
 

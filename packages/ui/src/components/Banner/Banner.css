@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
-  border-radius: var(--odi-border-radius-popover);
+  border-radius: var(--odi-border-radius-300);
   background-color: var(--odi-color-bg-surface);
   overflow: hidden;
   box-shadow: var(--odi-shadow-elevation-200);
