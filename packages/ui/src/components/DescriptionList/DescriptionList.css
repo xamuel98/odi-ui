@@ -1,0 +1,67 @@
+.odi-description-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.odi-description-list__row {
+  display: flex;
+  flex-direction: column;
+  padding: var(--odi-space-150) 0;
+  gap: var(--odi-space-200);
+  border-bottom: 1px solid var(--odi-color-border-secondary);
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+}
+
+.odi-description-list__term {
+  font-family: var(--odi-font-family-sans);
+  font-weight: var(--odi-font-weight-medium);
+  color: var(--odi-color-text-default);
+  margin-bottom: var(--odi-space-050);
+}
+
+.odi-description-list__description {
+  font-family: var(--odi-font-family-sans);
+  color: var(--odi-color-text-secondary);
+  margin: 0;
+}
+
+/* Gap Variants (affects padding) */
+.odi-description-list--gap-loose .odi-description-list__row {
+  padding: var(--odi-space-400) var(--odi-space-400) var(--odi-space-400) 0;
+}
+
+.odi-description-list--gap-tight .odi-description-list__row {
+  padding: var(--odi-space-200) var(--odi-space-200) var(--odi-space-200) 0;
+}
+
+/* Desktop Styles (Media Query) */
+@media (min-width: 768px) {
+  .odi-description-list__row {
+    flex-direction: row;
+    align-items: baseline; /* Align text baselines */
+    justify-content: space-between; /* Term left, Description right or taking up space */
+  }
+
+  .odi-description-list__term {
+    flex-basis: 30%; /* Term takes roughly 30% of width */
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .odi-description-list__description {
+    flex-basis: 70%;
+    flex-grow: 1;
+  }
+
+  .odi-description-list--gap-loose .odi-description-list__row {
+    padding: var(--odi-space-400) 0;
+  }
+
+  .odi-description-list--gap-tight .odi-description-list__row {
+    padding: var(--odi-space-200) 0;
+  }
+}
