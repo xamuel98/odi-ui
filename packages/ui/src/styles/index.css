@@ -1,7 +1,9 @@
 @import "./tokens.css";
+@import "./fonts.css";
 
 * {
   box-sizing: border-box;
+  font-family: var(--odi-font-family-sans);
   margin: 0;
   padding: 0;
 }
