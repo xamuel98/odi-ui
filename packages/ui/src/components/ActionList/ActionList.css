@@ -1,0 +1,179 @@
+.odi-action-list {
+  padding: var(--odi-space-150) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--odi-space-100);
+  border-radius: var(--odi-border-radius-300);
+  background: var(--odi-color-bg-surface);
+  box-shadow: var(--odi-shadow-elevation-300);
+}
+
+.odi-action-list__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--odi-space-100);
+  align-self: stretch;
+}
+
+.odi-action-list__section:not(:last-child) {
+  padding-bottom: var(--odi-space-100);
+  border-bottom: 1px solid var(--odi-color-border-secondary);
+}
+
+.odi-action-list__section-title {
+  padding: var(--odi-space-150) var(--odi-space-300);
+  color: var(--odi-color-text-default);
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-md-font-size);
+  font-weight: var(--odi-font-weight-medium);
+  /* text-transform: uppercase; */
+}
+
+.odi-action-list__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--odi-space-100);
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.odi-action-list__items li {
+  display: flex;
+  padding: var(--odi-space-0) var(--odi-space-150);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--odi-space-200);
+  align-self: stretch;
+}
+
+.odi-action-list__item {
+  appearance: none;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--odi-space-200);
+  padding: var(--odi-space-150);
+  color: var(--odi-color-text-default);
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  border-radius: var(--odi-border-radius-200);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  outline: none;
+  position: relative; /* For badges or absolute positioning if needed */
+}
+
+/* States */
+.odi-action-list__item:hover {
+  background-color: var(--odi-color-bg-surface-secondary-hover);
+  color: var(--odi-color-text-default);
+}
+
+.odi-action-list__item:active,
+.odi-action-list__item--active {
+  background-color: var(--odi-color-bg-surface-secondary-active);
+  color: var(--odi-color-text-default);
+}
+
+.odi-action-list__item--selected {
+  background-color: var(--odi-color-bg-surface-secondary-selected);
+  color: var(--odi-color-text-default);
+}
+
+.odi-action-list__item:focus-visible {
+  box-shadow: var(--odi-shadow-focus);
+  z-index: 1;
+}
+
+.odi-action-list__item:disabled,
+.odi-action-list__item--disabled {
+  color: var(--odi-color-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Destructive */
+.odi-action-list__item--destructive {
+  color: var(--odi-color-text-critical);
+}
+
+.odi-action-list__item--destructive:hover {
+  background-color: var(--odi-color-bg-surface-critical-hover);
+  color: var(--odi-color-text-critical-hover);
+}
+
+/* Variant: Indented */
+.odi-action-list__item--variant-indented {
+  padding-left: var(--odi-space-600);
+}
+
+/* Content layout */
+.odi-action-list__item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensure truncation works */
+}
+
+.odi-action-list__item-help-text {
+  color: var(--odi-color-text-secondary);
+  font-size: var(--odi-typography-body-sm-font-size);
+}
+
+.odi-action-list__prefix,
+.odi-action-list__suffix {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--odi-color-icon-secondary);
+}
+
+.odi-action-list__text {
+  white-space: nowrap;
+}
+
+.odi-action-list__item--truncate .odi-action-list__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* High Contrast Support */
+@media (forced-colors: active) {
+  .odi-action-list__item:hover,
+  .odi-action-list__item--active,
+  .odi-action-list__item:focus-visible {
+    outline: 2px solid CanvasText;
+  }
+}
+
+/* Filter Input */
+.odi-action-list__filter {
+  padding: var(--odi-space-200) var(--odi-space-300);
+  border-bottom: 1px solid var(--odi-color-border-secondary);
+  align-self: stretch;
+}
+
+.odi-action-list__filter-input {
+  width: 100%;
+  padding: var(--odi-space-150);
+  border: 1px solid var(--odi-color-border-default);
+  border-radius: var(--odi-border-radius-100);
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-md-font-size);
+}
+
+.odi-action-list__filter-input:focus {
+  outline: none;
+  border-color: var(--odi-color-border-focus);
+  box-shadow: var(--odi-shadow-focus);
+}
