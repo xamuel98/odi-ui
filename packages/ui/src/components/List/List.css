@@ -1,0 +1,30 @@
+.odi-list {
+  margin: 0;
+  padding: 0;
+  padding-left: var(--odi-space-400);
+  list-style-position: inside;
+}
+
+.odi-list--type-bullet {
+  list-style-type: disc;
+}
+
+.odi-list--type-number {
+  list-style-type: decimal;
+}
+
+.odi-list__item {
+  font-family: var(--odi-font-family-sans);
+  color: var(--odi-color-text-default);
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+}
+
+.odi-list__item + .odi-list__item {
+  margin-top: var(--odi-space-100);
+}
+
+/* Gap variants */
+.odi-list--gap-extra-tight .odi-list__item + .odi-list__item {
+  margin-top: var(--odi-space-050);
+}
