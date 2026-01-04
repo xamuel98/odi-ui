@@ -1,0 +1,158 @@
+.odi-bleed {
+  /* Base styles - will be overridden by inline CSS variables */
+}
+
+/* Negative margin utility classes */
+.odi-bleed--margin-inline-0 {
+  margin-inline: calc(-1 * var(--odi-space-0));
+}
+.odi-bleed--margin-inline-100 {
+  margin-inline: calc(-1 * var(--odi-space-100));
+}
+.odi-bleed--margin-inline-200 {
+  margin-inline: calc(-1 * var(--odi-space-200));
+}
+.odi-bleed--margin-inline-300 {
+  margin-inline: calc(-1 * var(--odi-space-300));
+}
+.odi-bleed--margin-inline-400 {
+  margin-inline: calc(-1 * var(--odi-space-400));
+}
+.odi-bleed--margin-inline-500 {
+  margin-inline: calc(-1 * var(--odi-space-500));
+}
+.odi-bleed--margin-inline-600 {
+  margin-inline: calc(-1 * var(--odi-space-600));
+}
+.odi-bleed--margin-inline-800 {
+  margin-inline: calc(-1 * var(--odi-space-800));
+}
+
+.odi-bleed--margin-block-0 {
+  margin-block: calc(-1 * var(--odi-space-0));
+}
+.odi-bleed--margin-block-100 {
+  margin-block: calc(-1 * var(--odi-space-100));
+}
+.odi-bleed--margin-block-200 {
+  margin-block: calc(-1 * var(--odi-space-200));
+}
+.odi-bleed--margin-block-300 {
+  margin-block: calc(-1 * var(--odi-space-300));
+}
+.odi-bleed--margin-block-400 {
+  margin-block: calc(-1 * var(--odi-space-400));
+}
+.odi-bleed--margin-block-500 {
+  margin-block: calc(-1 * var(--odi-space-500));
+}
+.odi-bleed--margin-block-600 {
+  margin-block: calc(-1 * var(--odi-space-600));
+}
+.odi-bleed--margin-block-800 {
+  margin-block: calc(-1 * var(--odi-space-800));
+}
+
+.odi-bleed--margin-block-start-0 {
+  margin-block-start: calc(-1 * var(--odi-space-0));
+}
+.odi-bleed--margin-block-end-0 {
+  margin-block-end: calc(-1 * var(--odi-space-0));
+}
+.odi-bleed--margin-inline-start-0 {
+  margin-inline-start: calc(-1 * var(--odi-space-0));
+}
+.odi-bleed--margin-inline-end-0 {
+  margin-inline-end: calc(-1 * var(--odi-space-0));
+}
+
+.odi-bleed--margin-block-start-100 {
+  margin-block-start: calc(-1 * var(--odi-space-100));
+}
+.odi-bleed--margin-block-end-100 {
+  margin-block-end: calc(-1 * var(--odi-space-100));
+}
+.odi-bleed--margin-inline-start-100 {
+  margin-inline-start: calc(-1 * var(--odi-space-100));
+}
+.odi-bleed--margin-inline-end-100 {
+  margin-inline-end: calc(-1 * var(--odi-space-100));
+}
+
+.odi-bleed--margin-block-start-200 {
+  margin-block-start: calc(-1 * var(--odi-space-200));
+}
+.odi-bleed--margin-block-end-200 {
+  margin-block-end: calc(-1 * var(--odi-space-200));
+}
+.odi-bleed--margin-inline-start-200 {
+  margin-inline-start: calc(-1 * var(--odi-space-200));
+}
+.odi-bleed--margin-inline-end-200 {
+  margin-inline-end: calc(-1 * var(--odi-space-200));
+}
+
+.odi-bleed--margin-block-start-300 {
+  margin-block-start: calc(-1 * var(--odi-space-300));
+}
+.odi-bleed--margin-block-end-300 {
+  margin-block-end: calc(-1 * var(--odi-space-300));
+}
+.odi-bleed--margin-inline-start-300 {
+  margin-inline-start: calc(-1 * var(--odi-space-300));
+}
+.odi-bleed--margin-inline-end-300 {
+  margin-inline-end: calc(-1 * var(--odi-space-300));
+}
+
+.odi-bleed--margin-block-start-400 {
+  margin-block-start: calc(-1 * var(--odi-space-400));
+}
+.odi-bleed--margin-block-end-400 {
+  margin-block-end: calc(-1 * var(--odi-space-400));
+}
+.odi-bleed--margin-inline-start-400 {
+  margin-inline-start: calc(-1 * var(--odi-space-400));
+}
+.odi-bleed--margin-inline-end-400 {
+  margin-inline-end: calc(-1 * var(--odi-space-400));
+}
+
+.odi-bleed--margin-block-start-500 {
+  margin-block-start: calc(-1 * var(--odi-space-500));
+}
+.odi-bleed--margin-block-end-500 {
+  margin-block-end: calc(-1 * var(--odi-space-500));
+}
+.odi-bleed--margin-inline-start-500 {
+  margin-inline-start: calc(-1 * var(--odi-space-500));
+}
+.odi-bleed--margin-inline-end-500 {
+  margin-inline-end: calc(-1 * var(--odi-space-500));
+}
+
+.odi-bleed--margin-block-start-600 {
+  margin-block-start: calc(-1 * var(--odi-space-600));
+}
+.odi-bleed--margin-block-end-600 {
+  margin-block-end: calc(-1 * var(--odi-space-600));
+}
+.odi-bleed--margin-inline-start-600 {
+  margin-inline-start: calc(-1 * var(--odi-space-600));
+}
+.odi-bleed--margin-inline-end-600 {
+  margin-inline-end: calc(-1 * var(--odi-space-600));
+}
+
+.odi-bleed--margin-block-start-800 {
+  margin-block-start: calc(-1 * var(--odi-space-800));
+}
+.odi-bleed--margin-block-end-800 {
+  margin-block-end: calc(-1 * var(--odi-space-800));
+}
+.odi-bleed--margin-inline-start-800 {
+  margin-inline-start: calc(-1 * var(--odi-space-800));
+}
+.odi-bleed--margin-inline-end-800 {
+  margin-inline-end: calc(-1 * var(--odi-space-800));
+}
