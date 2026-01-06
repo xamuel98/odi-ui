@@ -57,7 +57,7 @@ export const WithChildren: Story = {
             borderRadius: "8px",
           }}
         >
-          Panel content for {tabs[selected].content}
+          Panel content for {tabs[selected]?.content}
         </div>
       </Tabs>
     );
