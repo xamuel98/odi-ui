@@ -1,12 +1,8 @@
-import type {
-  ReactNode,
-  AnchorHTMLAttributes,
-  ButtonHTMLAttributes,
-} from "react";
+import type { ReactNode, AnchorHTMLAttributes } from "react";
 import type { VariantProps } from "class-variance-authority";
 import type { linkVariants } from "./Link.variants.js";
 
-type LinkTarget = "_blank" | "_self" | "_parent" | "_top";
+export type LinkTarget = "_blank" | "_self" | "_parent" | "_top";
 
 export interface LinkProps
   extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "target">,
@@ -22,11 +18,11 @@ export interface LinkProps
   /**
    * Makes the link open in a new tab.
    */
-  external?: boolean;
+  external?: boolean | undefined;
   /**
    * Where to display the url.
    */
-  target?: LinkTarget;
+  target?: LinkTarget | undefined;
   /**
    * Makes the link color the same as the current text color and adds an underline.
    */
@@ -51,4 +47,9 @@ export interface LinkProps
    * ID for the link.
    */
   id?: string;
+  /**
+   * Removes all default styling classes (e.g. odi-link).
+   * Useful when using Link as a child of another component that handles styling (e.g. Button).
+   */
+  unstyled?: boolean;
 }

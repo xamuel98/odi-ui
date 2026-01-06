@@ -18,6 +18,7 @@ const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>(
       dataPrimaryLink,
       onClick,
       id,
+      unstyled,
       ...props
     },
     ref
@@ -41,7 +42,10 @@ const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>(
 
     const commonProps = {
       id,
-      className: clsx(linkVariants({ monochrome, removeUnderline }), className),
+      className: clsx(
+        !unstyled && linkVariants({ monochrome, removeUnderline }),
+        className
+      ),
       onClick,
       "aria-label": accessibilityLabel,
       "data-primary-link": dataPrimaryLink,

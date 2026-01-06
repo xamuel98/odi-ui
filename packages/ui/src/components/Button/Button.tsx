@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
+import { Slot, Slottable } from "@radix-ui/react-slot";
 import clsx from "clsx";
 import type { ButtonProps } from "./Button.type.js";
 import { buttonVariants } from "./Button.variants.js";
@@ -64,30 +64,33 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         aria-pressed={pressed}
         {...props}
       >
-        {loading ? (
+        {loading && (
           <Spinner
             size="small"
             accessibilityLabel="Loading"
             hasFocusableParent={false}
           />
-        ) : (
-          <>
-            {icon && iconPosition === "start" && (
-              <span className="odi-button__icon">{icon}</span>
-            )}
+        )}
+        {!loading && icon && iconPosition === "start" && (
+          <span className="odi-button__icon">{icon}</span>
+        )}
 
-            {children && <span className="odi-button__label">{children}</span>}
+        {!loading &&
+          children &&
+          (asChild ? (
+            <Slottable>{children}</Slottable>
+          ) : (
+            <span className="odi-button__label">{children}</span>
+          ))}
 
-            {icon && iconPosition === "end" && (
-              <span className="odi-button__icon">{icon}</span>
-            )}
+        {!loading && icon && iconPosition === "end" && (
+          <span className="odi-button__icon">{icon}</span>
+        )}
 
-            {disclosure && (
-              <span className="odi-button__icon">
-                {disclosure === "up" ? <ChevronUpIcon /> : <ChevronDownIcon />}
-              </span>
-            )}
-          </>
+        {!loading && disclosure && (
+          <span className="odi-button__icon">
+            {disclosure === "up" ? <ChevronUpIcon /> : <ChevronDownIcon />}
+          </span>
         )}
       </Comp>
     );
