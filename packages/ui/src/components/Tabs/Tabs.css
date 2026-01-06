@@ -1,0 +1,109 @@
+.odi-tabs-container {
+  width: 100%;
+}
+
+.odi-tabs {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  gap: var(--odi-space-100);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.odi-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.odi-tabs--fitted .odi-tabs__item {
+  flex: 1;
+}
+
+.odi-tabs__item {
+  display: flex;
+}
+
+.odi-tabs__button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--odi-space-150) var(--odi-space-300);
+  margin: 0;
+
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-sm-font-size);
+  font-weight: var(--odi-font-weight-regular);
+  color: var(--odi-color-text-default);
+
+  border-radius: var(--odi-border-radius-button);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--odi-space-100);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+/* Hover state */
+@media (hover: hover) {
+  .odi-tabs__button:hover:not(:disabled):not(.odi-tabs__button--selected) {
+    background-color: var(--odi-color-bg-fill-transparent-hover);
+    color: var(--odi-color-text-default);
+  }
+}
+
+/* Focus state */
+.odi-tabs__button:focus-visible {
+  background-color: var(--odi-color-bg-fill-transparent-hover);
+  outline: none;
+  box-shadow: var(--odi-shadow-focus);
+}
+
+/* Selected/Active state - pill style with border */
+.odi-tabs__button--selected {
+  background-color: var(--odi-color-bg-fill-transparent-selected);
+  color: var(--odi-color-text-default);
+}
+
+.odi-tabs__button--selected:hover {
+  background-color: var(--odi-color-bg-fill-transparent-active);
+}
+
+/* Pressed state */
+.odi-tabs__button:active:not(:disabled) {
+  background-color: var(--odi-color-bg-fill-transparent-active);
+}
+
+/* Disabled state */
+.odi-tabs__button:disabled {
+  color: var(--odi-color-text-disabled);
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+/* Create new view button */
+.odi-tabs__new-view-btn {
+  padding: var(--odi-space-100);
+  color: var(--odi-color-icon-secondary);
+  border-radius: var(--odi-border-radius-200);
+}
+
+.odi-tabs__new-view-btn:hover:not(:disabled) {
+  background-color: var(--odi-color-bg-surface-hover);
+  color: var(--odi-color-icon-default);
+}
+
+/* Badge styling */
+.odi-tabs__badge {
+  display: flex;
+  align-items: center;
+}
+
+/* Panel content wrapper */
+.odi-tabs-panel {
+  padding-top: var(--odi-space-400);
+}
