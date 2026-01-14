@@ -1,0 +1,52 @@
+.odi-choice-list {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.odi-choice-list__legend {
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-heading-sm-font-size);
+  font-weight: var(--odi-typography-body-sm-font-weight);
+  line-height: var(--odi-typography-heading-sm-line-height);
+  color: var(--odi-color-text-default);
+  margin-bottom: var(--odi-space-200);
+}
+
+.odi-choice-list--title-hidden .odi-choice-list__legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.odi-choice-list__choices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--odi-space-200);
+}
+
+.odi-choice-list__choice-children {
+  margin-top: var(--odi-space-100);
+  margin-left: var(--odi-space-600); /* Indent children */
+}
+
+/* Error State */
+.odi-choice-list__error {
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-sm-font-size);
+  color: var(--odi-color-text-critical);
+  margin-top: var(--odi-space-100);
+  display: flex;
+  align-items: center;
+  gap: var(--odi-space-100);
+}
+
+.odi-choice-list__error svg,
+.odi-choice-list__error svg path {
+  fill: currentColor;
+}

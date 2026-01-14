@@ -38,7 +38,7 @@ export interface CheckboxProps {
   /** Display an error message. */
   error?: boolean | string;
   /** Indicates the tone of the checkbox. */
-  tone?: "magic";
+  tone?: "magic" | undefined;
   /** Spacing around children. */
   bleed?: ResponsiveProp<SpaceScale>;
   /** Vertical start spacing around children. */
