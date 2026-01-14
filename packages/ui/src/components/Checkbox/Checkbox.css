@@ -1,0 +1,195 @@
+.odi-checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.odi-checkbox-wrapper--disabled {
+  cursor: not-allowed;
+}
+
+.odi-checkbox-label-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--odi-space-200);
+}
+
+.odi-checkbox-label {
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-md-font-size);
+  color: var(--odi-color-text-default);
+  line-height: var(--odi-typography-body-md-line-height);
+}
+
+.odi-checkbox-label--hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.odi-checkbox-help-text {
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-md-font-size);
+  color: var(--odi-color-text-secondary);
+  margin-top: var(--odi-space-100);
+}
+
+.odi-checkbox-error {
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-sm-font-size);
+  color: var(--odi-color-text-critical);
+  margin-top: var(--odi-space-050);
+  display: flex;
+  align-items: center;
+  gap: var(--odi-space-100);
+}
+
+/* Input (Hidden but accessible) */
+.odi-checkbox__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: inherit;
+  margin: 0;
+  z-index: 1;
+}
+
+/* Custom Checkbox visual */
+.odi-checkbox__backdrop {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  margin-top: var(--odi-space-50);
+  border-radius: var(--odi-border-radius-100);
+  border: var(--odi-border-width-025) solid
+    var(--odi-color-specialty-input-border);
+  background-color: var(--odi-color-bg-surface);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover State */
+.odi-checkbox-wrapper:not(.odi-checkbox-wrapper--checked):not(
+    .odi-checkbox-wrapper--indeterminate
+  ):not(.odi-checkbox-wrapper--disabled):hover
+  .odi-checkbox__backdrop {
+  border-color: var(--odi-color-specialty-input-border-hover);
+  background-color: var(--odi-color-bg-surface-hover);
+}
+
+/* Focus State */
+.odi-checkbox__input:focus-visible + .odi-checkbox__backdrop {
+  border-color: var(--odi-color-specialty-input-border-hover);
+  background-color: var(--odi-color-bg-surface-hover);
+  box-shadow: var(--odi-shadow-focus);
+}
+
+/* Checked / Indeterminate State Global Styles */
+.odi-checkbox-wrapper--checked .odi-checkbox__backdrop,
+.odi-checkbox-wrapper--indeterminate .odi-checkbox__backdrop {
+  background-color: var(--odi-color-bg-fill-brand-selected);
+  border-color: var(--odi-color-bg-fill-brand-selected);
+}
+
+/* Tone: Magic */
+.odi-checkbox-wrapper--tone-magic.odi-checkbox-wrapper--checked
+  .odi-checkbox__backdrop,
+.odi-checkbox-wrapper--tone-magic.odi-checkbox-wrapper--indeterminate
+  .odi-checkbox__backdrop {
+  background-color: var(
+    --odi-color-bg-fill-magic,
+    #9c6ade
+  ); /* Fallback to a purple if magic var undefined */
+  border-color: var(--odi-color-bg-fill-magic, #9c6ade);
+}
+
+.odi-checkbox-wrapper--tone-magic.odi-checkbox-wrapper--checked
+  .odi-checkbox-label-content
+  .odi-checkbox-label,
+.odi-checkbox-wrapper--tone-magic.odi-checkbox-wrapper--indeterminate
+  .odi-checkbox-label-content
+  .odi-checkbox-label {
+  color: var(--odi-color-text-magic);
+}
+
+/* Error State */
+.odi-checkbox-wrapper--error .odi-checkbox__backdrop {
+  border-color: var(--odi-color-border-critical-secondary);
+  background-color: var(--odi-color-bg-surface-critical, #fff4f4);
+}
+.odi-checkbox-wrapper--error.odi-checkbox-wrapper--checked
+  .odi-checkbox__backdrop,
+.odi-checkbox-wrapper--error.odi-checkbox-wrapper--indeterminate
+  .odi-checkbox__backdrop {
+  background-color: var(--odi-color-bg-fill-critical);
+  border-color: var(--odi-color-bg-fill-critical);
+}
+
+.odi-checkbox-wrapper--error .odi-checkbox-error svg,
+.odi-checkbox-wrapper--error .odi-checkbox-error svg path {
+  fill: currentColor;
+}
+
+/* Disabled State */
+.odi-checkbox-wrapper--disabled .odi-checkbox__backdrop {
+  background-color: var(--odi-color-bg-surface-disabled);
+  border-color: var(--odi-color-border-disabled);
+}
+
+.odi-checkbox-wrapper--disabled
+  .odi-checkbox-label-content
+  .odi-checkbox-label {
+  color: var(--odi-color-text-disabled);
+}
+
+/* Icon / SVG styles */
+.odi-checkbox__icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--odi-color-text-brand-on-bg-fill);
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.2s ease;
+}
+
+.odi-checkbox-wrapper--checked .odi-checkbox__icon,
+.odi-checkbox-wrapper--indeterminate .odi-checkbox__icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* SVG Path Animation */
+.odi-checkbox__path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2; /* Adjust based on SVG viewBox */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 20; /* Ensure this covers path length */
+  stroke-dashoffset: 20;
+}
+
+.odi-checkbox-wrapper--checked .odi-checkbox__path {
+  animation: drawCheck 0.3s cubic-bezier(0.65, 0, 0.45, 1) forwards 0.1s;
+}
+
+@keyframes drawCheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

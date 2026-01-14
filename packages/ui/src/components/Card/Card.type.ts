@@ -1,24 +1,8 @@
 import type { ReactNode } from "react";
 import type { VariantProps } from "class-variance-authority";
 import type { cardVariants } from "./Card.variants.js";
-
-export type SpaceScale =
-  | "0"
-  | "025"
-  | "050"
-  | "100"
-  | "150"
-  | "200"
-  | "300"
-  | "400"
-  | "500"
-  | "600"
-  | "800"
-  | "1000"
-  | "1200"
-  | "1600";
-
-export type BreakpointsAlias = "xs" | "sm" | "md" | "lg" | "xl";
+import type { BreakpointsAlias } from "../../tokens/breakpoints.type.js";
+import type { SpaceScale } from "../../tokens/space.type.js";
 
 export type ResponsiveProp<T> = T | { [K in BreakpointsAlias]?: T };
 
