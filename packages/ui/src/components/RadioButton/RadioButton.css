@@ -1,0 +1,141 @@
+.odi-radio-wrapper {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.odi-radio-wrapper--disabled {
+  cursor: not-allowed;
+}
+
+.odi-radio-label-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--odi-space-200);
+}
+
+.odi-radio-label {
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-md-font-size);
+  color: var(--odi-color-text-default);
+  line-height: var(--odi-typography-body-md-line-height);
+}
+
+.odi-radio-label--hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.odi-radio-help-text {
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-md-font-size);
+  color: var(--odi-color-text-secondary);
+  margin-top: var(--odi-space-100);
+}
+
+.odi-radio-error {
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-sm-font-size);
+  color: var(--odi-color-text-critical);
+  margin-top: var(--odi-space-050);
+  display: flex;
+  align-items: center;
+  gap: var(--odi-space-100);
+}
+
+/* Input (Hidden but accessible) */
+.odi-radio__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: inherit;
+  margin: 0;
+  z-index: 1;
+}
+
+/* Custom Radio visual */
+.odi-radio__backdrop {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  margin-top: var(--odi-space-050);
+  border-radius: var(--odi-border-radius-full);
+  border: var(--odi-border-width-025) solid
+    var(--odi-color-specialty-input-border);
+  background-color: var(--odi-color-bg-surface);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover State */
+.odi-radio-wrapper:not(.odi-radio-wrapper--checked):not(
+    .odi-radio-wrapper--disabled
+  ):hover
+  .odi-radio__backdrop {
+  border-color: var(--odi-color-specialty-input-border-hover);
+  background-color: var(--odi-color-bg-surface-hover);
+}
+
+/* Focus State */
+.odi-radio__input:focus-visible + .odi-radio__backdrop {
+  border-color: var(--odi-color-specialty-input-border-hover);
+  background-color: var(--odi-color-bg-surface-hover);
+  box-shadow: var(--odi-shadow-focus);
+}
+
+/* Checked State */
+.odi-radio-wrapper--checked .odi-radio__backdrop {
+  background-color: var(--odi-color-bg-surface);
+  border-color: var(--odi-color-bg-fill-brand-selected);
+  border-width: 4px; /* Creates the dot effect by thickening border */
+}
+
+/* Tone: Magic */
+.odi-radio-wrapper--tone-magic.odi-radio-wrapper--checked .odi-radio__backdrop {
+  border-color: var(--odi-color-bg-fill-magic, #9c6ade);
+}
+
+.odi-radio-wrapper--tone-magic.odi-radio-wrapper--checked
+  .odi-radio-label-content
+  .odi-radio-label {
+  color: var(--odi-color-text-magic);
+}
+
+/* Error State */
+.odi-radio-wrapper--error .odi-radio__backdrop {
+  border-color: var(--odi-color-border-critical-secondary);
+  background-color: var(--odi-color-bg-surface-critical, #fff4f4);
+}
+.odi-radio-wrapper--error.odi-radio-wrapper--checked .odi-radio__backdrop {
+  border-color: var(--odi-color-bg-fill-critical);
+  background-color: var(--odi-color-bg-surface);
+}
+
+.odi-radio-wrapper--error .odi-radio-error svg,
+.odi-radio-wrapper--error .odi-radio-error svg path {
+  fill: currentColor;
+}
+
+/* Disabled State */
+.odi-radio-wrapper--disabled .odi-radio__backdrop {
+  background-color: var(--odi-color-bg-surface-disabled);
+  border-color: var(--odi-color-border-disabled);
+}
+
+.odi-radio-wrapper--disabled .odi-radio-label-content .odi-radio-label {
+  color: var(--odi-color-text-disabled);
+}
