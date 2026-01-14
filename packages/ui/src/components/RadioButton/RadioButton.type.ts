@@ -34,7 +34,7 @@ export interface RadioButtonProps {
   /** Display an error message. */
   error?: boolean | string;
   /** Indicates the tone of the text field. */
-  tone?: "magic";
+  tone?: "magic" | undefined;
   /** Spacing around children. Accepts a spacing token or an object of spacing tokens for different screen sizes. */
   bleed?: ResponsiveProp<SpaceScale>;
   /** Vertical start spacing around children. Accepts a spacing token or an object of spacing tokens for different screen sizes. */
