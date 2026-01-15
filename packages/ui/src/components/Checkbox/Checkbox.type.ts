@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
-import type { BreakpointsAlias } from "../../tokens/breakpoints.type.js";
+import type { ResponsiveProp } from "../../tokens/breakpoints.type.js";
 import type { SpaceScale } from "../../tokens/space.type.js";
-
-type ResponsiveProp<T> = T | { [Breakpoint in BreakpointsAlias]?: T };
 
 export interface CheckboxProps {
   /** Indicates the ID of the element that is controlled by the checkbox. */

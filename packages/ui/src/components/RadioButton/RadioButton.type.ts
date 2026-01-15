@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
-import type { BreakpointsAlias } from "../../tokens/breakpoints.type.js";
+import type { ResponsiveProp } from "../../tokens/breakpoints.type.js";
 import type { SpaceScale } from "../../tokens/space.type.js";
-
-type ResponsiveProp<T> = T | { [Breakpoint in BreakpointsAlias]?: T };
 
 export interface RadioButtonProps {
   /** Indicates the ID of the element that describes the radio button. */

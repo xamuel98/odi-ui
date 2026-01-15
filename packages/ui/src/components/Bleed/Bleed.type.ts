@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
-import type { BreakpointsAlias } from "../../tokens/breakpoints.type.js";
+import type { ResponsiveProp } from "../../tokens/breakpoints.type.js";
 import type { SpaceScale } from "../../tokens/space.type.js";
-
-export type ResponsiveProp<T> = T | { [K in BreakpointsAlias]?: T };
 
 export interface BleedProps {
   children?: ReactNode;

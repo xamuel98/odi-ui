@@ -1,10 +1,11 @@
 import type { ReactNode } from "react";
 import type { VariantProps } from "class-variance-authority";
 import type { cardVariants } from "./Card.variants.js";
-import type { BreakpointsAlias } from "../../tokens/breakpoints.type.js";
+import type {
+  BreakpointsAlias,
+  ResponsiveProp,
+} from "../../tokens/breakpoints.type.js";
 import type { SpaceScale } from "../../tokens/space.type.js";
-
-export type ResponsiveProp<T> = T | { [K in BreakpointsAlias]?: T };
 
 export type ColorBackgroundAlias =
   | "bg-surface"

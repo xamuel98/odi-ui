@@ -5,8 +5,5 @@ export type {
   CardHeaderProps,
   CardSectionProps,
   CardFooterProps,
-  SpaceScale,
-  BreakpointsAlias,
-  ResponsiveProp,
   ColorBackgroundAlias,
 } from "./Card.type.js";
