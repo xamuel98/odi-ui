@@ -1,0 +1,40 @@
+.odi-popover-overlay {
+  position: absolute;
+  background-color: var(--odi-color-bg-surface);
+  border-radius: var(--odi-border-radius-300);
+  box-shadow: var(--odi-shadow-elevation-300);
+  overflow: hidden;
+  max-width: 400px;
+  min-width: 100px;
+  /* Default z-index if no override */
+  z-index: 400;
+}
+
+.odi-popover-overlay:focus {
+  outline: none;
+}
+
+.odi-popover--sectioned {
+  padding: var(--odi-space-400);
+}
+
+.odi-popover--full-width {
+  width: 100%;
+  max-width: none;
+}
+
+.odi-popover--full-height {
+  height: 100%;
+}
+
+.odi-popover--fluid-content {
+  width: max-content;
+  height: max-content;
+}
+
+/* Print handling */
+@media print {
+  .odi-popover--hide-on-print {
+    display: none !important;
+  }
+}
