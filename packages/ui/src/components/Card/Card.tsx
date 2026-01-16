@@ -6,11 +6,13 @@ import type {
   CardHeaderProps,
   CardSectionProps,
   CardFooterProps,
-  ResponsiveProp,
-  SpaceScale,
-  BreakpointsAlias,
 } from "./Card.type.js";
 import "./Card.css";
+import type {
+  BreakpointsAlias,
+  ResponsiveProp,
+} from "../../tokens/breakpoints.type.js";
+import type { SpaceScale } from "../../tokens/space.type.js";
 
 // Helper to generate padding classes
 function getPaddingClasses(

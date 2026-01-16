@@ -1,7 +1,5 @@
-import type {
-  ResponsiveProp,
-  SpaceScale,
-} from "../components/Bleed/Bleed.type.js";
+import type { ResponsiveProp } from "../tokens/breakpoints.type.js";
+import type { SpaceScale } from "../tokens/space.type.js";
 
 /**
  * Helper to get inline styles for negative margins
