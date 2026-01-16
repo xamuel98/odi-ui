@@ -7,3 +7,4 @@ export type {
   TextOptionProps,
   LoadingProps,
 } from "./Listbox.type.js";
+export { listboxOptionVariants } from "./Listbox.variants.js";

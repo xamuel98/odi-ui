@@ -9,3 +9,4 @@ export { ColorPicker } from "./components/ColorPicker/index.js";
 export { Popover } from "./components/Popover/index.js";
 export { Tooltip } from "./components/Tooltip/index.js";
 export { Listbox } from "./components/Listbox/index.js";
+export { OptionList } from "./components/OptionList/index.js";
