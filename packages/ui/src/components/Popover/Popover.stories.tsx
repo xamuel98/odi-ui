@@ -4,6 +4,8 @@ import { Popover } from "./Popover.js";
 import { Button } from "../Button/index.js";
 import { PopoverCloseSource } from "./Popover.type.js";
 import { ActionList } from "../ActionList/index.js";
+import { Listbox } from "../Listbox/index.js";
+import { AutoSelection } from "../../enums/auto-selection.enum.js";
 
 const meta: Meta<typeof Popover> = {
   title: "Design System/Components/Overlays/Popover",
@@ -264,6 +266,63 @@ export const LazyLoadedList: Story = {
               onActionAnyItem={handleClose}
             />
           )}
+        </Popover>
+      </div>
+    );
+  },
+};
+
+export const WithListbox: Story = {
+  render: (args) => {
+    const [active, setActive] = useState(false);
+    const [selected, setSelected] = useState<string>("order");
+    const toggleActive = () => setActive((active) => !active);
+    const handleClose = () => setActive(false);
+
+    const handleSelect = (value: string) => {
+      setSelected(value);
+      setActive(false);
+    };
+
+    const options = [
+      { label: "Order Date", value: "order" },
+      { label: "Shipping Date", value: "shipping" },
+      { label: "Delivery Date", value: "delivery" },
+    ];
+
+    const selectedOption = options.find((opt) => opt.value === selected);
+
+    return (
+      <div
+        style={{ padding: "50px", display: "flex", justifyContent: "center" }}
+      >
+        <Popover
+          {...args}
+          active={active}
+          activator={
+            <Button onClick={toggleActive} disclosure>
+              Sort by: {selectedOption?.label}
+            </Button>
+          }
+          onClose={handleClose}
+        >
+          <div style={{ width: "200px" }}>
+            <Listbox
+              autoSelection={AutoSelection.FirstSelected}
+              onSelect={handleSelect}
+            >
+              <Listbox.Header>Sort Options</Listbox.Header>
+              {options.map((opt) => (
+                <Listbox.Option
+                  key={opt.value}
+                  value={opt.value}
+                  selected={selected === opt.value}
+                >
+                  {opt.label}
+                </Listbox.Option>
+              ))}
+            </Listbox>
+          </div>
         </Popover>
       </div>
     );
