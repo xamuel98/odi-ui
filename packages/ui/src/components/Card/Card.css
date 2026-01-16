@@ -162,7 +162,7 @@
 /* ========== SECTION ========== */
 .odi-card__section {
   padding: var(--odi-space-400) 0;
-  border-top: 1px solid var(--odi-color-border-secondary);
+  border-top: 1px solid var(--odi-color-border-default);
 }
 
 .odi-card__section:first-child {
@@ -220,7 +220,7 @@
   justify-content: flex-end;
   gap: var(--odi-space-200);
   padding-top: var(--odi-space-400);
-  border-top: 1px solid var(--odi-color-border-secondary);
+  border-top: 1px solid var(--odi-color-border-default);
   margin-top: var(--odi-space-400);
 }
 

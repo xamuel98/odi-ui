@@ -82,7 +82,15 @@ export const ActionListItem = React.forwardRef<
     const contentMarkup = (
       <>
         {prefix && <span className="odi-action-list__prefix">{prefix}</span>}
-        {icon && <span className="odi-action-list__prefix">{icon}</span>}
+        {icon && (
+          <span className="odi-action-list__prefix">
+            {destructive && React.isValidElement(icon)
+              ? React.cloneElement(icon as React.ReactElement<any>, {
+                  fill: "currentColor",
+                })
+              : icon}
+          </span>
+        )}
         {image && (
           <span className="odi-action-list__prefix">
             <img

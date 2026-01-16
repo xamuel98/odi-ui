@@ -110,7 +110,7 @@
 /* Divider */
 .odi-listbox-divider {
   height: 1px;
-  background-color: var(--odi-color-border-secondary);
+  background-color: var(--odi-color-border-default);
   margin: var(--odi-space-050) 0;
 }
 

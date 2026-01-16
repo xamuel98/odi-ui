@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
 import type { CalloutCardProps } from "./CalloutCard.type.js";
 import { Button } from "../Button/index.js";
+import { Text } from "../Text/index.js";
 import { Link } from "../Link/index.js";
 import { XIcon } from "../../icons/index.js";
 import "./CalloutCard.css";
@@ -37,7 +38,13 @@ export const CalloutCard = ({
       <div className="odi-callout-card__container">
         <div className="odi-callout-card__content">
           <div className="odi-callout-card__title-section">
-            <h2 className="odi-callout-card__title">{title}</h2>
+            <Text
+              as="h2"
+              variant="headingMd"
+              className="odi-callout-card__title"
+            >
+              {title}
+            </Text>
           </div>
           <div className="odi-callout-card__body">{children}</div>
           <div className="odi-callout-card__actions">

@@ -11,7 +11,7 @@
   font-size: var(--odi-typography-heading-sm-font-size);
   font-weight: var(--odi-typography-heading-sm-font-weight);
   color: var(--odi-color-text-default);
-  /* border-bottom: 1px solid var(--odi-color-border-secondary); */
+  /* border-bottom: 1px solid var(--odi-color-border-default); */
   margin-bottom: var(--odi-space-100);
 }
 

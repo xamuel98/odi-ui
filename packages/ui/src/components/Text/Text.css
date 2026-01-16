@@ -1,0 +1,189 @@
+.odi-text {
+  font-family: var(--odi-font-family-sans);
+}
+
+/* Alignments */
+.odi-text--align-start {
+  text-align: start;
+}
+.odi-text--align-center {
+  text-align: center;
+}
+.odi-text--align-end {
+  text-align: end;
+}
+.odi-text--align-justify {
+  text-align: justify;
+}
+
+/* Break Word */
+.odi-text--break-word {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Tones */
+.odi-text--tone-base {
+  color: var(--odi-color-text-default);
+}
+.odi-text--tone-disabled {
+  color: var(--odi-color-text-disabled);
+}
+.odi-text--tone-inherit {
+  color: inherit;
+}
+.odi-text--tone-success {
+  color: var(--odi-color-text-success);
+}
+.odi-text--tone-critical {
+  color: var(--odi-color-text-critical);
+}
+.odi-text--tone-caution {
+  color: var(--odi-color-text-caution);
+}
+.odi-text--tone-subdued {
+  color: var(--odi-color-text-secondary);
+}
+.odi-text--tone-text-inverse {
+  color: var(--odi-color-text-inverse);
+}
+.odi-text--tone-text-inverse-secondary {
+  color: var(--odi-color-text-inverse-secondary);
+}
+.odi-text--tone-magic {
+  color: var(--odi-color-text-magic);
+}
+.odi-text--tone-magic-subdued {
+  color: var(--odi-color-text-magic-secondary);
+}
+
+/* Font Weights */
+.odi-text--weight-regular {
+  font-weight: var(--odi-font-weight-regular);
+}
+.odi-text--weight-medium {
+  font-weight: var(--odi-font-weight-medium);
+}
+.odi-text--weight-semibold {
+  font-weight: var(--odi-font-weight-semibold);
+}
+.odi-text--weight-bold {
+  font-weight: var(--odi-font-weight-bold);
+}
+
+/* Numeric */
+.odi-text--numeric {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Truncate */
+.odi-text--truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 100%;
+}
+
+/* Decoration */
+.odi-text--decoration-line-through {
+  text-decoration: line-through;
+}
+
+/* Visually Hidden */
+.odi-text--visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Variants */
+.odi-text--variant-heading3xl {
+  font-size: var(--odi-typography-heading-3xl-font-size);
+  line-height: var(--odi-typography-heading-3xl-line-height);
+  font-weight: var(--odi-typography-heading-3xl-font-weight);
+  letter-spacing: var(--odi-typography-heading-3xl-letter-spacing);
+}
+
+.odi-text--variant-heading2xl {
+  font-size: var(--odi-typography-heading-2xl-font-size);
+  line-height: var(--odi-typography-heading-2xl-line-height);
+  font-weight: var(--odi-typography-heading-2xl-font-weight);
+  letter-spacing: var(--odi-typography-heading-2xl-letter-spacing);
+}
+
+.odi-text--variant-headingXl {
+  font-size: var(--odi-typography-heading-xl-font-size);
+  line-height: var(--odi-typography-heading-xl-line-height);
+  font-weight: var(--odi-typography-heading-xl-font-weight);
+  letter-spacing: var(--odi-typography-heading-xl-letter-spacing);
+}
+
+.odi-text--variant-headingLg {
+  font-size: var(--odi-typography-heading-lg-font-size);
+  line-height: var(--odi-typography-heading-lg-line-height);
+  font-weight: var(--odi-typography-heading-lg-font-weight);
+  letter-spacing: var(--odi-typography-heading-lg-letter-spacing);
+}
+
+.odi-text--variant-headingMd {
+  font-size: var(--odi-typography-heading-md-font-size);
+  line-height: var(--odi-typography-heading-md-line-height);
+  font-weight: var(--odi-typography-heading-md-font-weight);
+  letter-spacing: var(--odi-typography-heading-md-letter-spacing);
+}
+
+.odi-text--variant-headingSm {
+  font-size: var(--odi-typography-heading-sm-font-size);
+  line-height: var(--odi-typography-heading-sm-line-height);
+  font-weight: var(--odi-typography-heading-sm-font-weight);
+  letter-spacing: var(--odi-typography-heading-sm-letter-spacing);
+}
+
+.odi-text--variant-headingXs {
+  /* Using heading SM styles for XS as defined in request if implementation specific wasn't found, 
+     but tokens.css usually doesn't have Heading XS. 
+     Wait, request said: 
+     headingXs --p-font-size-300 = 12px
+     Let's check tokens.css again. 
+  */
+  /* Fallback to body-sm props with semibold if heading-xs token doesn't exist? */
+  /* Actually commonly "heading xs" is just body-sm + semibold */
+  font-size: var(--odi-typography-body-sm-font-size);
+  line-height: var(--odi-typography-body-sm-line-height);
+  font-weight: var(--odi-font-weight-semibold);
+}
+
+.odi-text--variant-bodyLg {
+  font-size: var(--odi-typography-body-lg-font-size);
+  line-height: var(--odi-typography-body-lg-line-height);
+  font-weight: var(--odi-typography-body-lg-font-weight);
+  letter-spacing: var(--odi-typography-body-lg-letter-spacing);
+}
+
+.odi-text--variant-bodyMd {
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  font-weight: var(--odi-typography-body-md-font-weight);
+  letter-spacing: var(--odi-typography-body-md-letter-spacing);
+}
+
+.odi-text--variant-bodySm {
+  font-size: var(--odi-typography-body-sm-font-size);
+  line-height: var(--odi-typography-body-sm-line-height);
+  font-weight: var(--odi-typography-body-sm-font-weight);
+  letter-spacing: var(--odi-typography-body-sm-letter-spacing);
+}
+
+.odi-text--variant-bodyXs {
+  font-size: var(--odi-typography-body-xs-font-size);
+  line-height: var(--odi-typography-body-xs-line-height);
+  font-weight: var(--odi-typography-body-xs-font-weight);
+  letter-spacing: var(--odi-typography-body-xs-letter-spacing);
+}

@@ -18,7 +18,7 @@
 
 .odi-action-list__section:not(:last-child) {
   padding-bottom: var(--odi-space-100);
-  border-bottom: 1px solid var(--odi-color-border-secondary);
+  border-bottom: 1px solid var(--odi-color-border-default);
 }
 
 .odi-action-list__section-title {
@@ -111,6 +111,10 @@
   color: var(--odi-color-text-critical-hover);
 }
 
+.odi-action-list__item--destructive .odi-action-list__prefix {
+  color: currentColor;
+}
+
 /* Variant: Indented */
 .odi-action-list__item--variant-indented {
   padding-left: var(--odi-space-600);
@@ -158,7 +162,7 @@
 /* Filter Input */
 .odi-action-list__filter {
   padding: var(--odi-space-200) var(--odi-space-300);
-  border-bottom: 1px solid var(--odi-color-border-secondary);
+  border-bottom: 1px solid var(--odi-color-border-default);
   align-self: stretch;
 }
 

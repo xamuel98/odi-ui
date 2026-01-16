@@ -33,7 +33,7 @@ export const Default: Story = {
     ];
 
     return (
-      <Card>
+      <Card padding="0">
         <OptionList
           title="Inventory Location"
           onChange={setSelected}
@@ -57,7 +57,7 @@ export const Multiple: Story = {
     ];
 
     return (
-      <Card>
+      <Card padding="0">
         <OptionList
           title="Manage sales channels availability"
           onChange={setSelected}
@@ -94,7 +94,7 @@ export const WithSections: Story = {
     ];
 
     return (
-      <Card>
+      <Card padding="0">
         <OptionList
           onChange={setSelected}
           sections={sections}
