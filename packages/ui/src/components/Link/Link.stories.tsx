@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Link } from "./index.js";
+import { Text } from "../Text/index.js";
 
 const meta: Meta<typeof Link> = {
   title: "Design System/Components/Navigation/Link",
@@ -24,10 +25,10 @@ export const Default: Story = {
 export const Monochrome: Story = {
   render: (args) => (
     <div style={{ color: "purple" }}>
-      <p style={{ fontSize: "13px", lineHeight: "20px" }}>
+      <Text as="p" variant="bodyMd">
         Currently surrounding text is purple. <Link {...args} /> inherits this
         color.
-      </p>
+      </Text>
     </div>
   ),
   args: {

@@ -9,3 +9,8 @@ export { XIcon } from "./XIcon.js";
 export { PersonIcon } from "./PersonIcon.js";
 export { ImageIcon } from "./ImageIcon.js";
 export { PlusIcon } from "./PlusIcon.js";
+export { MenuHorizontalIcon } from "./MenuHorizontalIcon.js";
+export { MenuVerticalIcon } from "./MenuVerticalIcon.js";
+export { DeleteIcon } from "./DeleteIcon.js";
+export { ChevronLeftIcon } from "./ChevronLeftIcon.js";
+export { ChevronRightIcon } from "./ChevronRightIcon.js";

@@ -11,7 +11,7 @@
   flex-direction: column;
   padding: var(--odi-space-150) 0;
   gap: var(--odi-space-200);
-  border-bottom: 1px solid var(--odi-color-border-secondary);
+  border-bottom: 1px solid var(--odi-color-border-default);
   font-size: var(--odi-typography-body-md-font-size);
   line-height: var(--odi-typography-body-md-line-height);
 }

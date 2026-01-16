@@ -1,6 +1,7 @@
 import * as React from "react";
 import { clsx } from "clsx";
 import { cardVariants } from "./Card.variants.js";
+import { Text } from "../Text/Text.js";
 import type {
   CardProps,
   CardHeaderProps,
@@ -41,7 +42,9 @@ const CardHeader = ({ title, actions }: CardHeaderProps) => {
   return (
     <div className="odi-card__header">
       {typeof title === "string" ? (
-        <h2 className="odi-card__header-title">{title}</h2>
+        <Text as="h2" variant="headingSm" className="odi-card__header-title">
+          {title}
+        </Text>
       ) : (
         <div className="odi-card__header-title">{title}</div>
       )}
@@ -72,7 +75,13 @@ const CardSection = ({
         <div className="odi-card__section-header">
           {title &&
             (typeof title === "string" ? (
-              <h3 className="odi-card__section-title">{title}</h3>
+              <Text
+                as="h3"
+                variant="headingXs"
+                className="odi-card__section-title"
+              >
+                {title}
+              </Text>
             ) : (
               <div className="odi-card__section-title">{title}</div>
             ))}

@@ -5,3 +5,4 @@ export type {
   PopoverPosition,
   PopoverAlignment,
 } from "./Popover.type.js";
+export { popoverVariants } from "./Popover.variants.js";

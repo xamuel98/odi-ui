@@ -8,6 +8,7 @@ import type {
 } from "./Banner.type.js";
 import { bannerVariants } from "./Banner.variants.js";
 import { Button } from "../Button/index.js";
+import { Text } from "../Text/index.js";
 import { XIcon } from "../../icons/index.js";
 import "./Banner.css";
 
@@ -107,7 +108,9 @@ const BannerHeader = ({
             <span className="odi-banner__icon">{icon}</span>
           ))}
         {!showContentInHeader && title && (
-          <h2 className="odi-banner__title">{title}</h2>
+          <Text as="h2" variant="headingMd" className="odi-banner__title">
+            {title}
+          </Text>
         )}
         {showContentInHeader && children && (
           <div className="odi-banner__content-text odi-banner__content-text--in-card">

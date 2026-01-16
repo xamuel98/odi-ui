@@ -5,6 +5,7 @@ import { Button } from "../Button/index.js";
 import { PopoverCloseSource } from "./Popover.type.js";
 import { ActionList } from "../ActionList/index.js";
 import { Listbox } from "../Listbox/index.js";
+import { Text } from "../Text/index.js";
 import { AutoSelection } from "../../enums/auto-selection.enum.js";
 
 const meta: Meta<typeof Popover> = {
@@ -75,7 +76,7 @@ export const Sectioned: Story = {
           }
           onClose={handleClose}
         >
-          <p>This content has default padding.</p>
+          <Text as="p">This content has default padding.</Text>
         </Popover>
       </div>
     );

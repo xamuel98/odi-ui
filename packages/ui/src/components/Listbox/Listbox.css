@@ -100,18 +100,17 @@
 .odi-listbox-header {
   padding: var(--odi-space-200) var(--odi-space-400);
   margin-top: var(--odi-space-100);
-  color: var(--odi-color-text-secondary);
+  color: var(--odi-color-text-default);
   font-size: var(--odi-typography-heading-sm-font-size);
   font-weight: var(--odi-typography-heading-sm-font-weight);
-  /* text-transform: uppercase; */
-  /* letter-spacing: 0.05em; */
+  letter-spacing: var(--odi-typography-heading-sm-letter-spacing);
   pointer-events: none;
 }
 
 /* Divider */
 .odi-listbox-divider {
   height: 1px;
-  background-color: var(--odi-color-border-secondary);
+  background-color: var(--odi-color-border-default);
   margin: var(--odi-space-050) 0;
 }
 
