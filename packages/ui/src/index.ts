@@ -7,3 +7,4 @@ export { Banner } from "./components/Banner/index.js";
 export { ProgressBar } from "./components/ProgressBar/index.js";
 export { ColorPicker } from "./components/ColorPicker/index.js";
 export { Popover } from "./components/Popover/index.js";
+export { Tooltip } from "./components/Tooltip/index.js";
