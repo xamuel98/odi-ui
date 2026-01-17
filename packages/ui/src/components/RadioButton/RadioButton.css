@@ -41,16 +41,6 @@
   margin-top: var(--odi-space-100);
 }
 
-.odi-radio-error {
-  font-family: var(--odi-font-family-sans);
-  font-size: var(--odi-typography-body-sm-font-size);
-  color: var(--odi-color-text-critical);
-  margin-top: var(--odi-space-050);
-  display: flex;
-  align-items: center;
-  gap: var(--odi-space-100);
-}
-
 /* Input (Hidden but accessible) */
 .odi-radio__input {
   position: absolute;
@@ -123,11 +113,6 @@
 .odi-radio-wrapper--error.odi-radio-wrapper--checked .odi-radio__backdrop {
   border-color: var(--odi-color-bg-fill-critical);
   background-color: var(--odi-color-bg-surface);
-}
-
-.odi-radio-wrapper--error .odi-radio-error svg,
-.odi-radio-wrapper--error .odi-radio-error svg path {
-  fill: currentColor;
 }
 
 /* Disabled State */

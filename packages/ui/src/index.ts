@@ -13,6 +13,7 @@ export * from "./components/ChoiceList/index.js";
 export * from "./components/ColorPicker/index.js";
 export * from "./components/DescriptionList/index.js";
 export * from "./components/EmptyState/index.js";
+export * from "./components/InlineError/index.js";
 export * from "./components/Link/index.js";
 export * from "./components/List/index.js";
 export * from "./components/Listbox/index.js";

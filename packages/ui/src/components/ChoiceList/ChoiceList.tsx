@@ -3,7 +3,7 @@ import type { ChoiceListProps } from "./ChoiceList.type.js";
 import { choiceListVariants } from "./ChoiceList.variants.js";
 import { Checkbox } from "../Checkbox/index.js";
 import { RadioButton } from "../RadioButton/index.js";
-import { InfoIcon } from "../../icons/index.js";
+import { InlineError } from "../InlineError/index.js";
 import "./ChoiceList.css";
 
 export const ChoiceList = ({
@@ -93,10 +93,7 @@ export const ChoiceList = ({
         })}
       </div>
       {error && typeof error === "string" && (
-        <div className="odi-choice-list__error">
-          <InfoIcon />
-          {error}
-        </div>
+        <InlineError message={error} fieldID={generatedId} />
       )}
     </fieldset>
   );

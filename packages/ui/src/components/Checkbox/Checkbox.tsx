@@ -2,8 +2,8 @@ import React, { useRef, useEffect, useId } from "react";
 import { clsx } from "clsx";
 import type { CheckboxProps } from "./Checkbox.type.js";
 import { checkboxVariants } from "./Checkbox.variants.js";
+import { InlineError } from "../InlineError/index.js";
 import "./Checkbox.css";
-import { InfoIcon } from "../../icons/index.js";
 
 const CheckIcon = () => (
   <svg
@@ -116,10 +116,7 @@ export const Checkbox = ({
         </label>
         {helpText && <div className="odi-checkbox-help-text">{helpText}</div>}
         {error && typeof error === "string" && (
-          <div className="odi-checkbox-error">
-            <InfoIcon />
-            {error}
-          </div>
+          <InlineError message={error} fieldID={id} />
         )}
       </div>
     </div>

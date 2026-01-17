@@ -343,14 +343,6 @@
   font-size: var(--odi-typography-body-sm-font-size);
 }
 
-.odi-textfield__error-message {
-  color: var(--odi-color-text-critical);
-  font-size: var(--odi-typography-body-sm-font-size);
-  display: flex;
-  align-items: center;
-  gap: var(--odi-space-100);
-}
-
 /* Monospaced Font */
 .odi-textfield--monospaced .odi-textfield__input,
 .odi-textfield--monospaced .odi-textfield__measure {
