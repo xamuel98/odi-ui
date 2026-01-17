@@ -1,4 +1,10 @@
-import React, { useId, useState, useCallback, useRef } from "react";
+import React, {
+  useId,
+  useState,
+  useCallback,
+  useRef,
+  useLayoutEffect,
+} from "react";
 import { clsx } from "clsx";
 import { Text } from "../Text/Text.js";
 import {
@@ -75,6 +81,32 @@ export const TextField = ({
   const [isFocused, setIsFocused] = useState(false);
   const lastTypedValue = useRef<string | null>(null);
   const autoCompletedOnBlur = useRef(false);
+  const measureRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useLayoutEffect(() => {
+    const isValueEmpty = !value || value.toString().length === 0;
+
+    if (autoSize && !multiline && measureRef.current && inputRef.current) {
+      const effectiveShowSuffix =
+        suffix && (!autoSize || !placeholder || !isValueEmpty);
+      const effectiveContent = effectiveShowSuffix
+        ? value
+        : value || placeholder;
+
+      if (!effectiveContent || effectiveContent.toString().length === 0) {
+        inputRef.current.style.width = "24px";
+      } else {
+        const width = measureRef.current.offsetWidth;
+
+        if (isValueEmpty && placeholder) {
+          inputRef.current.style.width = `${width}px`;
+        } else {
+          inputRef.current.style.width = width ? `${width - 10}px` : "24px";
+        }
+      }
+    }
+  }, [value, placeholder, autoSize, multiline, suffix]);
 
   const handleStepNumber = useCallback(
     (amount: number) => {
@@ -200,6 +232,7 @@ export const TextField = ({
       multiline: Boolean(multiline),
       align,
       monospaced,
+      autoSize: Boolean(autoSize),
     }),
     (focused || isFocused) && "odi-textfield--focused",
     className
@@ -209,6 +242,9 @@ export const TextField = ({
   const ariaDescribedBy = [helpTextId, errorId].filter(Boolean).join(" ");
   const labelTone = disabled ? "disabled" : readOnly ? "subdued" : "base";
   const isNumberType = type === "number";
+  const showSuffix =
+    suffix &&
+    (!autoSize || !placeholder || (value && value.toString().length > 0));
 
   const characterCountElement = showCharacterCount && maxLength && (
     <div
@@ -290,6 +326,7 @@ export const TextField = ({
                 </div>
               )}
               <Component
+                ref={inputRef as any}
                 id={id}
                 name={name}
                 value={value}
@@ -297,7 +334,6 @@ export const TextField = ({
                 className="odi-textfield__input"
                 disabled={disabled}
                 readOnly={readOnly}
-                // type is only supported on input, not textarea
                 type={!multiline ? type : undefined}
                 autoComplete={autoComplete}
                 autoFocus={autoFocus}
@@ -327,6 +363,15 @@ export const TextField = ({
                 required={required}
                 {...(ariaProps as any)}
               />
+              {autoSize && !multiline && (
+                <div
+                  aria-hidden
+                  ref={measureRef}
+                  className="odi-textfield__measure"
+                >
+                  {showSuffix ? value : value || placeholder}
+                </div>
+              )}
             </div>
 
             {loading && (
@@ -372,7 +417,7 @@ export const TextField = ({
                 </button>
               )}
 
-            {suffix && !loading && (
+            {showSuffix && !loading && (
               <div className="odi-textfield__suffix">{suffix}</div>
             )}
 

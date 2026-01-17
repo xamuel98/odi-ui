@@ -154,6 +154,8 @@
   padding-block-end: 0;
   color: var(--odi-color-text-secondary);
   flex-shrink: 0;
+  user-select: none;
+  -moz-user-select: none;
 }
 
 .odi-textfield__prefix svg,
@@ -350,7 +352,8 @@
 }
 
 /* Monospaced Font */
-.odi-textfield--monospaced .odi-textfield__input {
+.odi-textfield--monospaced .odi-textfield__input,
+.odi-textfield--monospaced .odi-textfield__measure {
   font-family: var(--odi-font-family-mono);
 }
 
@@ -398,9 +401,49 @@
   background: transparent; /* Ensure input background is transparent */
 }
 
+/* Auto Size Measurement Span */
+.odi-textfield__measure {
+  visibility: hidden;
+  position: absolute;
+  white-space: pre;
+  opacity: 0;
+  pointer-events: none;
+  font-family: inherit;
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  padding: var(--odi-space-150) var(--odi-space-300);
+  border: none;
+  top: 0;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Auto Size Behaviors */
+.odi-textfield--auto-size .odi-textfield__input-wrapper {
+  flex: 0 1 auto; /* Don't force full width, allow shrinking to content */
+}
+
+.odi-textfield--auto-size
+  .odi-textfield__input-wrapper
+  + .odi-textfield__suffix {
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+}
+
+/* Ensure suffix sits tight against the input when auto-sized */
+.odi-textfield--auto-size .odi-textfield__input {
+  padding-inline-end: 0;
+  width: 100%; /* Will be effectively overridden by inline style width, but keeps it stable */
+}
+
 @media (max-width: 768px) {
   .odi-textfield__input,
-  .odi-textfield__suggestion {
+  .odi-textfield__suggestion,
+  .odi-textfield__measure,
+  .odi-textfield--auto-size
+    .odi-textfield__input-wrapper
+    + .odi-textfield__suffix {
     font-size: 1rem;
   }
 }

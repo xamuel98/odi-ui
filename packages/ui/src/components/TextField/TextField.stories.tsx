@@ -237,6 +237,30 @@ export const AutoSize: Story = {
   },
 };
 
+export const AutoWidthWithStaticSuffix: Story = {
+  render: (args) => <TextFieldWithState {...args} />,
+  args: {
+    autoSize: true,
+    label: "Auto-width Input",
+    value: "Micheal Faraday",
+    placeholder: "",
+    suffix: "in: Your stores",
+    helpText: "The suffix should move as you type.",
+  },
+};
+
+export const AutoWidthWithDynamicSuffix: Story = {
+  render: (args) => <TextFieldWithState {...args} />,
+  args: {
+    autoSize: true,
+    label: "Dynamic Suffix Input",
+    value: "",
+    placeholder: "Searching in Unfulfilled orders",
+    suffix: "in: Unfulfilled orders",
+    helpText: "When empty, this should stay at 24px width (min-width logic).",
+  },
+};
+
 export const WithPrefix: Story = {
   render: (args) => <TextFieldWithState {...args} />,
   args: {

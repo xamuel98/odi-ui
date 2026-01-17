@@ -33,6 +33,9 @@ export const textFieldVariants = cva("odi-textfield", {
       center: "odi-textfield--align-center",
       right: "odi-textfield--align-right",
     },
+    autoSize: {
+      true: "odi-textfield--auto-size",
+    },
   },
   defaultVariants: {
     variant: "inherit",
