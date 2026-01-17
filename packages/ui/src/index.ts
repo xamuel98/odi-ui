@@ -25,5 +25,6 @@ export * from "./components/ResourceList/index.js";
 export * from "./components/Spinner/index.js";
 export * from "./components/Tabs/index.js";
 export * from "./components/Text/index.js";
+export * from "./components/TextField/index.js";
 export * from "./components/Thumbnail/index.js";
 export * from "./components/Tooltip/index.js";

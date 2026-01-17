@@ -1,0 +1,449 @@
+/* TextField Container */
+.odi-textfield-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--odi-space-100);
+  width: 100%;
+}
+
+.odi-textfield__label-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.odi-textfield__label-action:is(.odi-button--variant-plain) {
+  height: auto;
+  padding: 0;
+  font-weight: var(--odi-font-weight-regular);
+}
+
+/* Input Wrapper (Backdrop + Content) */
+.odi-textfield {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--odi-color-specialty-input-bg-surface);
+  border: 1px solid var(--odi-color-specialty-input-border);
+  border-radius: var(--odi-border-radius-button);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  overflow: hidden;
+}
+
+.odi-textfield__content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
+/* Hover State */
+@media (hover: hover) {
+  .odi-textfield:hover:not(.odi-textfield--disabled):not(
+      .odi-textfield--readonly
+    ):not(.odi-textfield--error):not(.odi-textfield--tone-magic) {
+    background-color: var(--odi-color-specialty-input-bg-surface-hover);
+    border-color: var(--odi-color-specialty-input-border-hover);
+  }
+}
+
+/* Focus State */
+.odi-textfield:focus-within:not(.odi-textfield--disabled):not(
+    .odi-textfield--readonly
+  ):not(.odi-textfield--error):not(.odi-textfield--tone-magic),
+.odi-textfield--focused:not(.odi-textfield--disabled):not(
+    .odi-textfield--readonly
+  ):not(.odi-textfield--error):not(.odi-textfield--tone-magic) {
+  background-color: var(--odi-color-specialty-input-bg-surface-hover);
+  border-color: var(--odi-color-specialty-input-border-hover);
+}
+
+.odi-textfield:focus-within:not(.odi-textfield--disabled):not(
+    .odi-textfield--readonly
+  ),
+.odi-textfield--focused:not(.odi-textfield--disabled):not(
+    .odi-textfield--readonly
+  ) {
+  outline: 2px solid var(--odi-color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Error State */
+.odi-textfield--error {
+  background-color: var(--odi-color-bg-surface-critical);
+  border-color: var(--odi-color-border-critical-secondary);
+}
+
+.odi-textfield--error:focus-within,
+.odi-textfield--error.odi-textfield--focused {
+  border-color: var(--odi-color-border-critical-secondary);
+}
+
+/* Disabled State */
+.odi-textfield--disabled {
+  background-color: var(--odi-color-bg-surface-disabled);
+  border-color: transparent;
+  cursor: not-allowed;
+}
+
+.odi-textfield--disabled .odi-textfield__input {
+  color: var(--odi-color-text-disabled);
+}
+
+/* Readonly State */
+.odi-textfield--readonly {
+  background-color: var(--odi-color-bg-surface-disabled);
+  border-color: transparent;
+  cursor: default;
+}
+
+.odi-textfield--readonly .odi-textfield__input {
+  color: var(--odi-color-text-secondary);
+}
+
+.odi-textfield--readonly:focus-within {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* Sizes */
+.odi-textfield--size-medium {
+  min-height: 2.25rem; /* 36px */
+}
+
+.odi-textfield--size-slim {
+  min-height: 1.75rem; /* 28px */
+}
+
+/* Variant: Borderless */
+.odi-textfield--variant-borderless {
+  border: none;
+  background: var(--odi-color-specialty-input-bg-surface);
+}
+
+/* Tone: Magic */
+.odi-textfield--tone-magic {
+  background-color: var(--odi-color-bg-surface-magic);
+  border-color: var(--odi-color-border-magic-secondary);
+}
+
+@media (hover: hover) {
+  .odi-textfield--tone-magic:hover {
+    background-color: var(--odi-color-bg-surface-magic-hover);
+    border-color: var(--odi-color-border-magic-secondary-hover);
+  }
+}
+
+.odi-textfield--tone-magic:focus-within,
+.odi-textfield--tone-magic.odi-textfield--focused {
+  background-color: var(--odi-color-bg-surface-magic-hover);
+  border-color: var(--odi-color-border-magic-secondary-hover);
+}
+
+.odi-textfield--tone-magic .odi-textfield__input {
+  color: var(--odi-color-text-magic);
+}
+
+/* Prefix & Suffix */
+.odi-textfield__prefix,
+.odi-textfield__suffix {
+  display: flex;
+  align-items: center;
+  padding-block-start: 0;
+  padding-block-end: 0;
+  color: var(--odi-color-text-secondary);
+  flex-shrink: 0;
+  user-select: none;
+  -moz-user-select: none;
+}
+
+.odi-textfield__prefix svg,
+.odi-textfield__prefix svg path,
+.odi-textfield__suffix svg,
+.odi-textfield__suffix svg path {
+  fill: var(--odi-color-icon-secondary);
+}
+
+.odi-textfield__prefix {
+  padding-inline-start: var(--odi-space-300);
+  padding-inline-end: var(--odi-space-100);
+}
+
+.odi-textfield__prefix + .odi-textfield__input {
+  padding-inline-start: var(--odi-space-050);
+}
+
+.odi-textfield__suffix {
+  padding-inline-start: var(--odi-space-100);
+  padding-inline-end: var(--odi-space-300);
+}
+
+/* The actual input element */
+.odi-textfield__input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: var(--odi-space-150) var(--odi-space-300);
+  font-family: inherit;
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  color: var(--odi-color-text-default);
+  width: 100%;
+  min-width: 0; /* allows flex shrink */
+}
+
+.odi-textfield__input:focus {
+  outline: none;
+}
+
+.odi-textfield__input::placeholder {
+  color: var(--odi-color-text-secondary);
+}
+
+.odi-textfield__input:disabled {
+  cursor: not-allowed;
+}
+
+/* Remove default number spinner */
+.odi-textfield__input::-webkit-outer-spin-button,
+.odi-textfield__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.odi-textfield__input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Multiline (Textarea) */
+.odi-textfield--multiline {
+  height: auto;
+  align-items: flex-start;
+}
+
+.odi-textfield--multiline .odi-textfield__input {
+  resize: vertical;
+  min-height: 4rem;
+  padding: var(--odi-space-200);
+}
+
+/* Spinner (Unit/Number controls) */
+.odi-textfield__spinner {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  justify-content: center;
+  visibility: hidden;
+  width: 1.375rem;
+  margin: var(--odi-space-100);
+  flex-shrink: 0;
+}
+
+@media (hover: hover) {
+  .odi-textfield:hover
+    .odi-textfield__input[type="number"]
+    + .odi-textfield__spinner {
+    visibility: visible;
+  }
+}
+
+.odi-textfield__spinner-button {
+  flex: 1;
+  display: flex;
+  width: 22px;
+  height: 12px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  color: var(--odi-color-icon-default);
+  background: var(--odi-color-bg-fill-tertiary);
+  padding: 0 1px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.odi-textfield__spinner-button:first-child {
+  border-radius: var(--odi-border-radius-100) var(--odi-border-radius-100) 0 0;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.05); */
+}
+
+.odi-textfield__spinner-button:last-child {
+  border-radius: 0 0 var(--odi-border-radius-100) var(--odi-border-radius-100);
+}
+
+.odi-textfield__spinner-button:hover {
+  background-color: var(--odi-color-bg-fill-tertiary-hover);
+}
+
+.odi-textfield__spinner-button:active {
+  background-color: var(--odi-color-bg-fill-tertiary-active);
+}
+
+.odi-textfield__spinner-button svg {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+/* Clear Button */
+.odi-textfield__clear-button {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: var(--odi-space-100);
+  color: var(--odi-color-icon-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--odi-space-100);
+}
+
+.odi-textfield__clear-button:hover {
+  color: var(--odi-color-icon-default);
+}
+
+.odi-textfield__clear-button svg,
+.odi-textfield__clear-button svg path {
+  fill: currentColor;
+}
+
+/* Connected Fields */
+.odi-textfield-wrapper--connected {
+  flex-direction: row;
+  gap: 0;
+}
+
+.odi-textfield-wrapper--connected .odi-textfield {
+  border-radius: 0;
+}
+
+.odi-textfield-wrapper--connected .odi-textfield:first-child {
+  border-top-left-radius: var(--odi-border-radius-200);
+  border-bottom-left-radius: var(--odi-border-radius-200);
+}
+
+.odi-textfield-wrapper--connected .odi-textfield:last-child {
+  border-top-right-radius: var(--odi-border-radius-200);
+  border-bottom-right-radius: var(--odi-border-radius-200);
+}
+
+/* Character Count */
+.odi-textfield__character-count--inside {
+  display: flex;
+  align-items: center;
+  padding-inline-end: var(--odi-space-200);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Help Text & Error Text */
+.odi-textfield__help-text {
+  color: var(--odi-color-text-secondary);
+  font-size: var(--odi-typography-body-sm-font-size);
+}
+
+.odi-textfield__error-message {
+  color: var(--odi-color-text-critical);
+  font-size: var(--odi-typography-body-sm-font-size);
+  display: flex;
+  align-items: center;
+  gap: var(--odi-space-100);
+}
+
+/* Monospaced Font */
+.odi-textfield--monospaced .odi-textfield__input,
+.odi-textfield--monospaced .odi-textfield__measure {
+  font-family: var(--odi-font-family-mono);
+}
+
+/* Loading State */
+.odi-textfield__spinner--loading {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--odi-color-border-secondary);
+  border-top-color: var(--odi-color-icon-active);
+  border-radius: 50%;
+  animation: odi-spin 0.6s linear infinite;
+}
+
+@keyframes odi-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Suggestion */
+.odi-textfield__input-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+
+.odi-textfield__suggestion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  color: var(--odi-color-text-disabled);
+  z-index: 0;
+  padding: var(--odi-space-150) var(--odi-space-300);
+  font-family: inherit;
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  white-space: pre;
+  overflow: hidden;
+}
+
+.odi-textfield__input {
+  z-index: 1; /* Ensure input is above suggestion */
+  background: transparent; /* Ensure input background is transparent */
+}
+
+/* Auto Size Measurement Span */
+.odi-textfield__measure {
+  visibility: hidden;
+  position: absolute;
+  white-space: pre;
+  opacity: 0;
+  pointer-events: none;
+  font-family: inherit;
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  padding: var(--odi-space-150) var(--odi-space-300);
+  border: none;
+  top: 0;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Auto Size Behaviors */
+.odi-textfield--auto-size .odi-textfield__input-wrapper {
+  flex: 0 1 auto; /* Don't force full width, allow shrinking to content */
+}
+
+.odi-textfield--auto-size
+  .odi-textfield__input-wrapper
+  + .odi-textfield__suffix {
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+}
+
+/* Ensure suffix sits tight against the input when auto-sized */
+.odi-textfield--auto-size .odi-textfield__input {
+  padding-inline-end: 0;
+  width: 100%; /* Will be effectively overridden by inline style width, but keeps it stable */
+}
+
+@media (max-width: 768px) {
+  .odi-textfield__input,
+  .odi-textfield__suggestion,
+  .odi-textfield__measure,
+  .odi-textfield--auto-size
+    .odi-textfield__input-wrapper
+    + .odi-textfield__suffix {
+    font-size: 1rem;
+  }
+}

@@ -14,3 +14,5 @@ export { MenuVerticalIcon } from "./MenuVerticalIcon.js";
 export { DeleteIcon } from "./DeleteIcon.js";
 export { ChevronLeftIcon } from "./ChevronLeftIcon.js";
 export { ChevronRightIcon } from "./ChevronRightIcon.js";
+export { SearchIcon } from "./SearchIcon.js";
+export { XCircleIcon } from "./XCircleIcon.js";
