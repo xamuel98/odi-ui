@@ -1,0 +1,17 @@
+.odi-inline-error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--odi-space-100);
+  color: var(--odi-color-text-critical);
+}
+
+.odi-inline-error__icon {
+  flex-shrink: 0;
+  display: flex;
+}
+
+/* Ensure SVG icon fills with critical color */
+.odi-inline-error__icon svg,
+.odi-inline-error__icon svg path {
+  fill: currentColor;
+}

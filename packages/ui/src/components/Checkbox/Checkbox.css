@@ -41,16 +41,6 @@
   margin-top: var(--odi-space-100);
 }
 
-.odi-checkbox-error {
-  font-family: var(--odi-font-family-sans);
-  font-size: var(--odi-typography-body-sm-font-size);
-  color: var(--odi-color-text-critical);
-  margin-top: var(--odi-space-050);
-  display: flex;
-  align-items: center;
-  gap: var(--odi-space-100);
-}
-
 /* Input (Hidden but accessible) */
 .odi-checkbox__input {
   position: absolute;
@@ -136,11 +126,6 @@
   .odi-checkbox__backdrop {
   background-color: var(--odi-color-bg-fill-critical);
   border-color: var(--odi-color-bg-fill-critical);
-}
-
-.odi-checkbox-wrapper--error .odi-checkbox-error svg,
-.odi-checkbox-wrapper--error .odi-checkbox-error svg path {
-  fill: currentColor;
 }
 
 /* Disabled State */

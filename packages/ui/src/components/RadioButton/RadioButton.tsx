@@ -2,8 +2,8 @@ import React, { useRef, useId } from "react";
 import { clsx } from "clsx";
 import type { RadioButtonProps } from "./RadioButton.type.js";
 import { radioButtonVariants } from "./RadioButton.variants.js";
+import { InlineError } from "../InlineError/index.js";
 import "./RadioButton.css";
-import { InfoIcon } from "../../icons/index.js";
 
 export const RadioButton = ({
   checked = false,
@@ -71,10 +71,7 @@ export const RadioButton = ({
         </label>
         {helpText && <div className="odi-radio-help-text">{helpText}</div>}
         {error && typeof error === "string" && (
-          <div className="odi-radio-error">
-            <InfoIcon />
-            {error}
-          </div>
+          <InlineError message={error} fieldID={id} />
         )}
       </div>
     </div>

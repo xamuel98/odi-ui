@@ -9,7 +9,6 @@ import { clsx } from "clsx";
 import { Text } from "../Text/Text.js";
 import {
   XCircleIcon,
-  InfoIcon,
   ChevronUpIcon,
   ChevronDownIcon,
 } from "../../icons/index.js";
@@ -17,6 +16,7 @@ import type { TextFieldProps } from "./TextField.type.js";
 import { textFieldVariants } from "./TextField.variants.js";
 import "./TextField.css";
 import { Button } from "../Button/index.js";
+import { InlineError } from "../InlineError/index.js";
 
 export const TextField = ({
   id: idProp,
@@ -436,13 +436,8 @@ export const TextField = ({
         </div>
       )}
 
-      {typeof error === "string" && (
-        <div id={errorId} className="odi-textfield__error-message">
-          <InfoIcon fill="var(--odi-color-text-critical)" />
-          <Text as="span" variant="bodyMd" tone="critical">
-            {error}
-          </Text>
-        </div>
+      {error && typeof error === "string" && (
+        <InlineError message={error} fieldID={errorId || id} />
       )}
 
       {multiline && characterCountElement}

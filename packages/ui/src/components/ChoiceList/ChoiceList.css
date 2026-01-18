@@ -34,19 +34,3 @@
   margin-top: var(--odi-space-100);
   margin-left: var(--odi-space-600); /* Indent children */
 }
-
-/* Error State */
-.odi-choice-list__error {
-  font-family: var(--odi-font-family-sans);
-  font-size: var(--odi-typography-body-sm-font-size);
-  color: var(--odi-color-text-critical);
-  margin-top: var(--odi-space-100);
-  display: flex;
-  align-items: center;
-  gap: var(--odi-space-100);
-}
-
-.odi-choice-list__error svg,
-.odi-choice-list__error svg path {
-  fill: currentColor;
-}
