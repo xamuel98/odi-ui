@@ -1,0 +1,265 @@
+.odi-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--odi-space-050) var(--odi-space-150);
+  background-color: var(--odi-color-bg-fill-tertiary);
+  border: none;
+  border-radius: var(--odi-border-radius-200);
+  color: var(--odi-color-text-default);
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-sm-font-size);
+  line-height: var(--odi-typography-body-sm-line-height);
+  font-weight: var(--odi-typography-body-sm-font-weight);
+  text-decoration: none;
+  cursor: default;
+  height: var(--odi-space-500);
+  transition: background-color 0.2s ease;
+  box-sizing: border-box;
+  gap: var(--odi-space-050);
+}
+
+.odi-tag:focus-visible:not(.odi-tag--clickable):not(.odi-tag--removable):not(
+    .odi-tag--link
+  ):not(.odi-tag--disabled) {
+  outline: 2px solid var(--odi-color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Clickable / Link Variant */
+.odi-tag--clickable,
+.odi-tag--link {
+  cursor: pointer;
+}
+
+.odi-tag--clickable:active,
+.odi-tag--link:active {
+  background-color: var(--odi-color-bg-fill-tertiary-active);
+}
+
+.odi-tag--tone-success.odi-tag--clickable:active,
+.odi-tag--tone-success.odi-tag--link:active {
+  background-color: var(--odi-color-bg-fill-success-active);
+}
+
+.odi-tag--tone-warning.odi-tag--clickable:active,
+.odi-tag--tone-warning.odi-tag--link:active {
+  background-color: var(--odi-color-bg-fill-warning-active);
+}
+
+.odi-tag--tone-critical.odi-tag--clickable:active,
+.odi-tag--tone-critical.odi-tag--link:active {
+  background-color: var(--odi-color-bg-fill-critical-active);
+}
+
+.odi-tag--tone-magic.odi-tag--clickable:active,
+.odi-tag--tone-magic.odi-tag--link:active {
+  background-color: var(--odi-color-bg-fill-magic-active);
+}
+
+/* Size: Large */
+.odi-tag--size-large {
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  padding: var(--odi-space-100) var(--odi-space-200);
+}
+
+/* Tone Variants */
+.odi-tag--tone-default {
+  background-color: var(--odi-color-bg-fill-tertiary);
+  color: var(--odi-color-text-default);
+}
+
+.odi-tag--tone-success {
+  background-color: var(--odi-color-bg-fill-success-secondary);
+  color: var(--odi-color-text-success);
+}
+
+.odi-tag--tone-warning {
+  background-color: var(--odi-color-bg-fill-warning-secondary);
+  color: var(--odi-color-text-warning);
+}
+
+.odi-tag--tone-critical {
+  background-color: var(--odi-color-bg-fill-critical-secondary);
+  color: var(--odi-color-text-critical);
+}
+
+.odi-tag--tone-magic {
+  background-color: var(--odi-color-bg-fill-magic-secondary);
+  color: var(--odi-color-text-magic);
+}
+
+/* Disabled State */
+.odi-tag--disabled {
+  background-color: var(--odi-color-bg-fill-disabled);
+  color: var(--odi-color-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Remove Button */
+.odi-tag--removable {
+  padding-inline-end: var(--odi-space-025);
+}
+
+.odi-tag__remove-button {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.odi-tag__remove-button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--odi-color-icon-secondary);
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.odi-tag--removable.odi-tag--disabled .odi-tag__remove-button {
+  color: var(--odi-color-icon-disabled);
+}
+
+.odi-tag__remove-button:focus-visible:not(.odi-tag--disabled) {
+  outline: 2px solid var(--odi-color-border-focus);
+  outline-offset: 0;
+}
+
+.odi-tag__remove-button:active:not(.odi-tag--disabled) {
+  color: var(--odi-color-icon-hover);
+  background-color: var(--odi-color-bg-fill-tertiary-active);
+}
+
+.odi-tag--tone-success .odi-tag__remove-button:active:not(.odi-tag--disabled) {
+  background-color: var(--odi-color-bg-surface-success-active);
+}
+
+.odi-tag--tone-warning .odi-tag__remove-button:active:not(.odi-tag--disabled) {
+  background-color: var(--odi-color-bg-surface-warning-active);
+}
+
+.odi-tag--tone-critical .odi-tag__remove-button:active:not(.odi-tag--disabled) {
+  background-color: var(--odi-color-bg-surface-critical-active);
+}
+
+.odi-tag--tone-magic .odi-tag__remove-button:active:not(.odi-tag--disabled) {
+  background-color: var(--odi-color-bg-surface-magic-active);
+}
+
+.odi-tag__remove-button svg,
+.odi-tag__remove-button svg path {
+  fill: currentColor;
+}
+
+/* Tone-specific icon colors */
+.odi-tag--tone-success .odi-tag__remove-button {
+  color: var(--odi-color-text-success);
+}
+
+.odi-tag--tone-warning .odi-tag__remove-button {
+  color: var(--odi-color-text-warning);
+}
+
+.odi-tag--tone-critical .odi-tag__remove-button {
+  color: var(--odi-color-text-critical);
+}
+
+.odi-tag--tone-magic .odi-tag__remove-button {
+  color: var(--odi-color-text-magic);
+}
+
+@media (hover: hover) {
+  .odi-tag--clickable:hover,
+  .odi-tag--link:hover {
+    background-color: var(--odi-color-bg-fill-tertiary-hover);
+    color: var(--odi-color-text-default);
+  }
+
+  .odi-tag--tone-success.odi-tag--clickable:hover,
+  .odi-tag--tone-success.odi-tag--link:hover {
+    background-color: var(--odi-color-bg-fill-success-secondary);
+    color: var(--odi-color-text-success);
+  }
+
+  .odi-tag--tone-warning.odi-tag--clickable:hover,
+  .odi-tag--tone-warning.odi-tag--link:hover {
+    background-color: var(--odi-color-bg-fill-warning-secondary);
+    color: var(--odi-color-text-warning);
+  }
+
+  .odi-tag--tone-critical.odi-tag--clickable:hover,
+  .odi-tag--tone-critical.odi-tag--link:hover {
+    background-color: var(--odi-color-bg-fill-critical-secondary);
+    color: var(--odi-color-text-critical);
+  }
+
+  .odi-tag--tone-magic.odi-tag--clickable:hover,
+  .odi-tag--tone-magic.odi-tag--link:hover {
+    background-color: var(--odi-color-bg-fill-magic-secondary);
+    color: var(--odi-color-text-magic);
+  }
+
+  .odi-tag--link:hover {
+    text-decoration: underline;
+  }
+
+  .odi-tag--removable.odi-tag--link:hover .odi-tag__remove-button {
+    background-color: var(--odi-color-bg-fill-tertiary-active);
+  }
+
+  .odi-tag__remove-button:hover {
+    color: var(--odi-color-icon-hover);
+    background-color: var(--odi-color-bg-fill-tertiary-hover);
+  }
+
+  .odi-tag--tone-success .odi-tag__remove-button:hover {
+    background-color: #b1eac8;
+    color: var(--odi-color-text-success-hover);
+  }
+
+  .odi-tag--tone-success.odi-tag--removable.odi-tag--link:hover
+    .odi-tag__remove-button {
+    background-color: #b1eac8;
+    color: var(--odi-color-text-success-hover);
+  }
+
+  .odi-tag--tone-warning .odi-tag__remove-button:hover {
+    background-color: #dec272;
+    color: var(--odi-color-text-warning-hover);
+  }
+
+  .odi-tag--tone-warning.odi-tag--removable.odi-tag--link:hover
+    .odi-tag__remove-button {
+    background-color: #dec272;
+    color: var(--odi-color-text-warning-hover);
+  }
+
+  .odi-tag--tone-critical .odi-tag__remove-button:hover {
+    background-color: #edb9b0;
+    color: var(--odi-color-text-critical-hover);
+  }
+
+  .odi-tag--tone-critical.odi-tag--removable.odi-tag--link:hover
+    .odi-tag__remove-button {
+    background-color: #edb9b0;
+    color: var(--odi-color-text-critical-hover);
+  }
+
+  .odi-tag--tone-magic .odi-tag__remove-button:hover {
+    background-color: var(--odi-color-bg-fill-magic-secondary-active);
+    color: var(--odi-color-text-magic-secondary);
+  }
+
+  .odi-tag--tone-magic.odi-tag--removable.odi-tag--link:hover
+    .odi-tag__remove-button {
+    background-color: var(--odi-color-bg-fill-magic-secondary-active);
+    color: var(--odi-color-text-magic-secondary);
+  }
+}
