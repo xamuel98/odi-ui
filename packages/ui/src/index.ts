@@ -23,6 +23,7 @@ export * from "./components/ProgressBar/index.js";
 export * from "./components/RadioButton/index.js";
 export * from "./components/ResourceItem/index.js";
 export * from "./components/ResourceList/index.js";
+export * from "./components/Select/index.js";
 export * from "./components/Spinner/index.js";
 export * from "./components/Tabs/index.js";
 export * from "./components/Text/index.js";

@@ -1,0 +1,206 @@
+.odi-select {
+  display: flex;
+  flex-direction: column;
+  gap: var(--odi-space-100);
+}
+
+.odi-select__label-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--odi-space-100);
+}
+
+.odi-select__label {
+  font-size: var(--odi-typography-body-sm-font-size);
+  line-height: var(--odi-typography-body-sm-line-height);
+  font-weight: var(--odi-font-weight-medium);
+  color: var(--odi-color-text-default);
+}
+
+.odi-select__label--hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.odi-select__label-action:is(.odi-button--variant-plain) {
+  height: auto;
+  padding: 0;
+  font-weight: var(--odi-font-weight-regular);
+}
+
+.odi-select__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.odi-select__prefix {
+  position: absolute;
+  left: var(--odi-space-300);
+  pointer-events: none;
+  color: var(--odi-color-text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.odi-select__select {
+  width: 100%;
+  min-height: 32px;
+  padding: var(--odi-space-150) var(--odi-space-300);
+  border: 1px solid var(--odi-color-specialty-input-border);
+  border-radius: var(--odi-border-radius-button);
+  background-color: var(--odi-color-specialty-input-bg-surface);
+  color: var(--odi-color-text-default);
+  font-family: var(--odi-font-family-sans);
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  font-weight: var(--odi-font-weight-regular);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M10.634%204.36599C10.5179%204.24988%2010.3801%204.15778%2010.2284%204.09494C10.0768%204.0321%209.91418%203.99976%209.75%203.99976C9.58582%203.99976%209.42325%204.0321%209.27157%204.09494C9.11989%204.15778%208.98208%204.24988%208.866%204.36599L6.22%207.01299C6.1504%207.08259%206.09519%207.16522%206.05752%207.25616C6.01985%207.34709%206.00047%207.44456%206.00047%207.54299C6.00047%207.64142%206.01985%207.73889%206.05752%207.82982C6.09519%207.92076%206.1504%208.00339%206.22%208.07299C6.2896%208.14259%206.37223%208.1978%206.46316%208.23547C6.5541%208.27314%206.65157%208.29252%206.75%208.29252C6.84843%208.29252%206.94589%208.27314%207.03683%208.23547C7.12777%208.1978%207.2104%208.14259%207.28%208.07299L9.75%205.60299L12.22%208.07299C12.2896%208.14259%2012.3722%208.1978%2012.4632%208.23547C12.5541%208.27314%2012.6516%208.29252%2012.75%208.29252C12.8484%208.29252%2012.9459%208.27314%2013.0368%208.23547C13.1278%208.1978%2013.2104%208.14259%2013.28%208.07299C13.3496%208.00339%2013.4048%207.92076%2013.4425%207.82982C13.4801%207.73889%2013.4995%207.64142%2013.4995%207.54299C13.4995%207.44456%2013.4801%207.34709%2013.4425%207.25616C13.4048%207.16522%2013.3496%207.08259%2013.28%207.01299L10.634%204.36599Z%22%20fill%3D%22%234A4A4A%22%2F%3E%3Cpath%20d%3D%22M13.28%2013.073L10.634%2015.72C10.5179%2015.8361%2010.3801%2015.9282%2010.2284%2015.991C10.0768%2016.0539%209.91418%2016.0862%209.75%2016.0862C9.58582%2016.0862%209.42325%2016.0539%209.27157%2015.991C9.11989%2015.9282%208.98208%2015.8361%208.866%2015.72L6.22%2013.073C6.1504%2013.0034%206.09519%2012.9208%206.05752%2012.8298C6.01985%2012.7389%206.00047%2012.6414%206.00047%2012.543C6.00047%2012.4446%206.01985%2012.3471%206.05752%2012.2562C6.09519%2012.1652%206.1504%2012.0826%206.22%2012.013C6.2896%2011.9434%206.37223%2011.8882%206.46316%2011.8505C6.5541%2011.8128%206.65157%2011.7935%206.75%2011.7935C6.84843%2011.7935%206.94589%2011.8128%207.03683%2011.8505C7.12777%2011.8882%207.2104%2011.9434%207.28%2012.013L9.75%2014.483L12.22%2012.013C12.2896%2011.9434%2012.3722%2011.8882%2012.4632%2011.8505C12.5541%2011.8128%2012.6516%2011.7935%2012.75%2011.7935C12.8484%2011.7935%2012.9459%2011.8128%2013.0368%2011.8505C13.1278%2011.8882%2013.2104%2011.9434%2013.28%2012.013C13.3496%2012.0826%2013.4048%2012.1652%2013.4425%2012.2562C13.4801%2012.3471%2013.4995%2012.4446%2013.4995%2012.543C13.4995%2012.6414%2013.4801%2012.7389%2013.4425%2012.8298C13.4048%2012.9208%2013.3496%2013.0034%2013.28%2013.073Z%22%20fill%3D%22%234A4A4A%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--odi-space-300) center;
+  padding-right: var(--odi-space-800);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.odi-select--tone-magic .odi-select__select {
+  color: var(--odi-color-text-magic);
+}
+
+.odi-select__select--has-prefix {
+  padding-left: var(--odi-space-800);
+}
+
+@media (hover: hover) {
+  .odi-select__select:hover:not(:disabled) {
+    border-color: var(--odi-color-specialty-input-border-hover);
+    background-color: var(--odi-color-specialty-input-bg-surface-hover);
+  }
+}
+
+.odi-select__select:focus {
+  outline: 2px solid var(--odi-color-border-focus);
+  outline-offset: 2px;
+  border-color: var(--odi-color-specialty-input-border-hover);
+  background-color: var(--odi-color-specialty-input-bg-surface-hover);
+}
+
+/* Error state */
+.odi-select--error .odi-select__select {
+  background-color: var(--odi-color-bg-surface-critical);
+  border-color: var(--odi-color-border-critical-secondary);
+}
+
+.odi-select--error .odi-select__select:focus {
+  outline-color: var(--odi-color-border-focus);
+  border-color: var(--odi-color-border-critical-secondary);
+}
+
+/* Disabled state */
+.odi-select--disabled .odi-select__select {
+  background-color: var(--odi-color-bg-surface-disabled);
+  border-color: transparent;
+  color: var(--odi-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.odi-select--disabled .odi-select__prefix {
+  color: var(--odi-color-text-disabled);
+}
+
+/* Magic tone */
+.odi-select--tone-magic .odi-select__select {
+  background-color: var(--odi-color-bg-surface-magic);
+  border-color: var(--odi-color-border-magic-secondary);
+}
+
+.odi-select--tone-magic .odi-select__select:focus {
+  outline-color: var(--odi-color-border-magic-secondary);
+  border-color: var(--odi-color-border-magic-secondary);
+}
+
+@media (hover: hover) {
+  .odi-select--tone-magic .odi-select__select:hover {
+    background-color: var(--odi-color-bg-surface-magic-hover);
+    border-color: var(--odi-color-border-magic-secondary-hover);
+  }
+
+  .odi-select--error .odi-select__select:hover {
+    background-color: var(--odi-color-bg-surface-critical);
+    border-color: var(--odi-color-border-critical-secondary);
+  }
+}
+
+/* Inline label */
+.odi-select__input-wrapper--inline-label {
+  border: 1px solid var(--odi-color-specialty-input-border);
+  border-radius: var(--odi-border-radius-button);
+  background-color: var(--odi-color-specialty-input-bg-surface);
+  padding-left: var(--odi-space-300);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.odi-select__input-wrapper--inline-label:has(:focus) {
+  outline: 2px solid var(--odi-color-border-focus);
+  outline-offset: 2px;
+  border-color: var(--odi-color-specialty-input-border-hover);
+  background-color: var(--odi-color-specialty-input-bg-surface-hover);
+}
+
+@media (hover: hover) {
+  .odi-select__input-wrapper--inline-label:hover:not(:has(:disabled)) {
+    border-color: var(--odi-color-specialty-input-border-hover);
+    background-color: var(--odi-color-specialty-input-bg-surface-hover);
+  }
+}
+
+.odi-select--error .odi-select__input-wrapper--inline-label {
+  background-color: var(--odi-color-bg-surface-critical);
+  border-color: var(--odi-color-border-critical-secondary);
+}
+
+.odi-select--disabled .odi-select__input-wrapper--inline-label {
+  background-color: var(--odi-color-bg-surface-disabled);
+  border-color: transparent;
+}
+
+.odi-select--tone-magic .odi-select__input-wrapper--inline-label {
+  background-color: var(--odi-color-bg-surface-magic);
+  border-color: var(--odi-color-border-magic-secondary);
+}
+
+.odi-select__inline-label {
+  flex-shrink: 0;
+  padding-right: var(--odi-space-200);
+  display: flex;
+  align-items: center;
+}
+
+.odi-select--label-inline .odi-select__select {
+  border: none;
+  background: transparent;
+  padding-left: 0;
+  outline: none !important;
+}
+
+/* Help text */
+.odi-select__help-text {
+  font-size: var(--odi-typography-body-sm-font-size);
+  line-height: var(--odi-typography-body-sm-line-height);
+  color: var(--odi-color-text-secondary);
+  margin-top: var(--odi-space-100);
+}
+
+/* Error message */
+.odi-select__error {
+  margin-top: var(--odi-space-100);
+}
