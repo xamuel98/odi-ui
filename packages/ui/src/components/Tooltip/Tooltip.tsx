@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback, useLayoutEffect } from "react";
 import { createPortal } from "react-dom";
+import { Text } from "../Text/Text.js";
 import { type TooltipProps, type TooltipPosition } from "./Tooltip.type.js";
 import {
   tooltipVariants,
@@ -255,9 +256,11 @@ export const Tooltip = ({
             {accessibilityLabel && (
               <span className="visually-hidden">{accessibilityLabel}</span>
             )}
-            {content}
+            <Text as="p" variant="bodySm">
+              {content}
+            </Text>
           </div>,
-          portalContainer
+          portalContainer,
         )}
     </>
   );

@@ -33,8 +33,8 @@ const BulkActionMenu = ({ action }: { action: MenuGroupDescriptor }) => {
       {action.icon
         ? null
         : "content" in action
-        ? action.content
-        : (action as any).title}
+          ? action.content
+          : (action as any).title}
     </Button>
   );
 
@@ -77,8 +77,8 @@ const BulkActionButton = ({
       {action.icon
         ? null
         : "content" in action
-        ? action.content
-        : (action as any).title}
+          ? action.content
+          : (action as any).title}
     </Button>
   );
 
@@ -173,8 +173,8 @@ export const ResourceList = <TItemType,>({
                 allVisibleSelected
                   ? true
                   : someVisibleSelected
-                  ? "indeterminate"
-                  : false
+                    ? "indeterminate"
+                    : false
               }
               onChange={handleSelectAll}
               label="Select all"
@@ -232,7 +232,7 @@ export const ResourceList = <TItemType,>({
                         <option key={opt.value} value={opt.value}>
                           {opt.label}
                         </option>
-                      )
+                      ),
                     )
                   : null}
               </select>
@@ -297,13 +297,13 @@ export const ResourceList = <TItemType,>({
                         newSelected = [...(selectedItems as string[]), id];
                       } else {
                         newSelected = (selectedItems as string[]).filter(
-                          (sid) => sid !== id
+                          (sid) => sid !== id,
                         );
                       }
                     }
                     onSelectionChange(newSelected);
                   },
-                }
+                },
               );
             }
             return <li key={id}>{itemElement}</li>;

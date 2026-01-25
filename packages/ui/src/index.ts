@@ -18,6 +18,7 @@ export * from "./components/Link/index.js";
 export * from "./components/List/index.js";
 export * from "./components/Listbox/index.js";
 export * from "./components/OptionList/index.js";
+export * from "./components/Pagination/index.js";
 export * from "./components/Popover/index.js";
 export * from "./components/ProgressBar/index.js";
 export * from "./components/RadioButton/index.js";

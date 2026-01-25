@@ -1,0 +1,63 @@
+.odi-pagination {
+  display: flex;
+  align-items: center;
+  gap: var(--odi-space-200);
+}
+
+.odi-pagination--page {
+  justify-content: center;
+}
+
+.odi-pagination--table {
+  justify-content: flex-start;
+}
+
+.odi-pagination__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--odi-space-200);
+}
+
+.odi-pagination__controls .odi-button {
+  background-color: var(--odi-color-bg-fill-tertiary);
+}
+
+.odi-pagination__controls .odi-button-group--segmented .odi-button:disabled {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.odi-pagination__controls
+  .odi-button-group--segmented
+  .odi-button:active:not(:disabled) {
+  box-shadow:
+    -1px 0 1px 0 rgba(26, 26, 26, 0.12) inset,
+    1px 0 1px 0 rgba(26, 26, 26, 0.12) inset,
+    0 2px 1px 0 rgba(26, 26, 26, 0.2) inset;
+}
+
+.odi-pagination__label {
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  font-weight: var(--odi-typography-body-md-font-weight);
+  letter-spacing: var(--odi-typography-body-md-letter-spacing);
+  color: var(--odi-color-text-default);
+  white-space: nowrap;
+}
+
+/* For table type, label comes first */
+.odi-pagination--table .odi-pagination__label {
+  order: -1;
+  margin-right: var(--odi-space-300);
+}
+
+/* For page type, label is between buttons */
+.odi-pagination--page .odi-pagination__label {
+  order: 0;
+  padding: 0 var(--odi-space-300);
+}
+
+@media (hover: hover) {
+  .odi-pagination__controls .odi-button:hover:not(:disabled) {
+    background: var(--odi-color-bg-fill-tertiary-hover);
+  }
+}
