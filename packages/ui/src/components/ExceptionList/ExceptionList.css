@@ -1,0 +1,102 @@
+.odi-exception-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--odi-space-400);
+}
+
+.odi-exception-list__item {
+  display: flex;
+  gap: var(--odi-space-100);
+  align-items: flex-start;
+}
+
+.odi-exception-list__bullet-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.odi-exception-list__bullet {
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 50%;
+  background-color: var(--odi-color-text-secondary);
+  flex-shrink: 0;
+}
+
+.odi-exception-list__bullet--warning {
+  background-color: var(--odi-color-border-warning);
+}
+
+.odi-exception-list__bullet--critical {
+  background-color: var(--odi-color-border-critical);
+}
+
+.odi-exception-list__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  color: var(--odi-color-text-secondary);
+}
+
+.odi-exception-list__icon--warning {
+  color: var(--odi-color-text-caution);
+}
+
+.odi-exception-list__text--warning svg,
+.odi-exception-list__icon--warning svg path {
+  fill: var(--odi-color-text-caution);
+}
+
+.odi-exception-list__icon--critical {
+  color: var(--odi-color-text-critical);
+}
+
+.odi-exception-list__icon--critical svg,
+.odi-exception-list__icon--critical svg path {
+  fill: var(--odi-color-text-critical);
+}
+
+.odi-exception-list__content {
+  display: flex;
+  gap: var(--odi-space-100);
+  flex: 1;
+  min-width: 0;
+}
+
+.odi-exception-list__title {
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  font-weight: 550;
+  color: var(--odi-color-text-secondary);
+}
+
+.odi-exception-list__title--warning {
+  color: var(--odi-color-text-warning);
+}
+
+.odi-exception-list__title--critical {
+  color: var(--odi-color-text-critical);
+}
+
+.odi-exception-list__description {
+  font-size: var(--odi-typography-body-md-font-size);
+  line-height: var(--odi-typography-body-md-line-height);
+  font-weight: var(--odi-typography-body-md-font-weight);
+  color: var(--odi-color-text-secondary);
+}
+
+.odi-exception-list__description--truncate {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  flex: 1 0 0;
+}
