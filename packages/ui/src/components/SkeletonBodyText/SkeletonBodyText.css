@@ -1,0 +1,59 @@
+.odi-skeleton-body-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--odi-space-300);
+  width: 100%;
+}
+
+.odi-skeleton-body-text__line {
+  height: 0.5rem;
+  background-color: var(--odi-color-bg-fill-tertiary);
+  border-radius: var(--odi-border-radius-100);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer animation */
+.odi-skeleton-body-text__line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: odi-shimmer 2s infinite;
+}
+
+@keyframes odi-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Randomize line widths for a more natural look */
+.odi-skeleton-body-text__line:nth-child(4n + 1) {
+  width: 95%;
+}
+.odi-skeleton-body-text__line:nth-child(4n + 2) {
+  width: 100%;
+}
+.odi-skeleton-body-text__line:nth-child(4n + 3) {
+  width: 85%;
+}
+.odi-skeleton-body-text__line:nth-child(4n + 4) {
+  width: 90%;
+}
+
+/* Last line usually shorter if multiple lines */
+.odi-skeleton-body-text:not(:only-child)
+  .odi-skeleton-body-text__line:last-child {
+  width: 60%;
+}
